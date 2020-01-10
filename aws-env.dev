@@ -1,3 +1,5 @@
+#Change variables in this file first 
+
 getparam () {
 	aws --profile ins-dev ssm get-parameters --names "$1" --with-decryption --query Parameters[0].Value --output text
 }
