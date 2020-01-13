@@ -74,7 +74,8 @@ after_success:
 matrix:
   include:
     #TEMPORARY add deploy stage for dev
-    - env: DEPLOY=none
+    - env: DEPLOY=dev
+    if: branch = remove_hard_coded_variables
       # if: tag IS present
       deploy:
         provider: script
