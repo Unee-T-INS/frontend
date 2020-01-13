@@ -73,15 +73,15 @@ after_success:
 
 matrix:
   include:
-    #TEMPORARY add deploy stage for dev
+    # add deploy stage for dev
     - env: DEPLOY=dev
-      # if: tag IS present
+      if: branch = master
       deploy:
         provider: script
         skip_cleanup: true
         script: PROFILE=$AWS_PROFILE_DEV AWS_ACCESS_KEY_ID=$AWS_ACCOUNT_USER_ID_DEV AWS_SECRET_ACCESS_KEY=$AWS_ACCOUNT_SECRET_DEV AWS_REGION=$AWS_DEFAULT_REGION ./deploy.sh -d
         on:
-          branch: remove_hard_coded_variables
+          branch: master
     - env: DEPLOY=demo
       if: tag IS present
       deploy:
