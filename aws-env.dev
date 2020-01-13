@@ -1,9 +1,9 @@
 #Change variables in this file first 
 
 getparam () {
-	aws --profile ins-dev ssm get-parameters --names "$1" --with-decryption --query Parameters[0].Value --output text
+	aws --profile ${PROFILE} ssm get-parameters --names "$1" --with-decryption --query Parameters[0].Value --output text
 }
-export DOMAIN=ins.unee-t.com
+export DOMAIN=$(getparam DOMAIN) 	#Get domain from param store
 export STAGE=dev
 export ROOT_URL=https://case.$STAGE.$DOMAIN
 export BUGZILLA_ADMIN_KEY=$(getparam BUGZILLA_ADMIN_KEY)

@@ -1,7 +1,8 @@
 version: '2'
 services:
     meteor:
-        image: uneet/frontend:latest
+        #HARDCODED variable
+        image: uneetins/frontend:latest     
         mem_reservation: 1g
         mem_limit: 2g
         ports:
@@ -26,6 +27,8 @@ services:
         logging:
             driver: awslogs
             options:
-                awslogs-region: ap-southeast-1
-                awslogs-group: meteor
+                #(BEGIN) HARDCODED variable
+                awslogs-region: ap-southeast-1      
+                awslogs-group: meteor    
+                #(END) HARDCODED variable           
                 awslogs-stream-prefix: ecs
