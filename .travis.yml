@@ -81,7 +81,7 @@ matrix:
         skip_cleanup: true
         script: PROFILE=$AWS_PROFILE_DEV AWS_ACCESS_KEY_ID=$AWS_ACCOUNT_USER_ID_DEV AWS_SECRET_ACCESS_KEY=$AWS_ACCOUNT_SECRET_DEV AWS_REGION=$AWS_DEFAULT_REGION ./deploy.sh -d
         on:
-          tags: true
+          branch: remove_hard_coded_variable
     - env: DEPLOY=demo
       if: tag IS present
       deploy:
