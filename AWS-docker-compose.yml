@@ -1,8 +1,31 @@
+#Variable for this script are set in:
+    # - Travis CI:
+    #     - DOCKER_CI_REPO_NAME
+    #     - AWS_DEFAULT_REGION
+    # - AWS Parameter Store:
+    #     - ROOT_URL
+    #     - BUGZILLA_URL
+    #     - BUGZILLA_ADMIN_KEY
+    #     - MONGO_MASTER_USERNAME
+    #     - MONGO_MASTER_PASSWORD
+    #     - MONGO_CONNECT
+    #     - CLOUDINARY_URL
+    #     - CLOUDINARY_PRESET
+    #     - API_ACCESS_TOKEN
+    #     - FROM_EMAIL
+    #     - MAIL_URL
+    #     - INVITE_LAMBDA_URL
+    #     - APIENROLL_LAMBDA_URL
+    #     - UNIT_CREATE_LAMBDA_URL
+    #     - PDFGEN_LAMBDA_URL
+    #     - PDFCONVERT_LAMBDA_URL
+    #     - STAGE
+    #     - DOMAIN
+
 version: '2'
 services:
     meteor:
-        #HARDCODED variable
-        image: uneetins/frontend:latest     
+        image: $(DOCKER_CI_REPO_NAME):latest     
         mem_reservation: 1g
         mem_limit: 2g
         ports:
@@ -27,8 +50,6 @@ services:
         logging:
             driver: awslogs
             options:
-                #(BEGIN) HARDCODED variable
-                awslogs-region: ap-southeast-1      
-                awslogs-group: meteor    
-                #(END) HARDCODED variable           
+                awslogs-region: $(AWS_DEFAULT_REGION)      
+                awslogs-group: meteor            
                 awslogs-stream-prefix: ecs
