@@ -40,8 +40,8 @@ env:
 before_install:
   # Removed command as pyenv is no longer found during deploy
   #- pyenv global 2.7.14  # For removing SNIMissingWarning warnings
-  # - curl https://install.meteor.com | /bin/sh
-  # - export PATH="$HOME/.meteor:$PATH"
+  - curl https://install.meteor.com | /bin/sh
+  - export PATH="$HOME/.meteor:$PATH"
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
   - curl -o $HOME/.local/bin/ecs-cli
@@ -73,7 +73,7 @@ matrix:
   include:
     # add deploy stage for dev
     - env: DEPLOY=dev
-      if: branch = master
+      if: branch = remove_hard_coded_variables
       deploy:
         provider: script
         script: PROFILE=$AWS_PROFILE_DEV AWS_ACCESS_KEY_ID=$AWS_ACCOUNT_USER_ID_DEV AWS_SECRET_ACCESS_KEY=$AWS_ACCOUNT_SECRET_DEV AWS_REGION=$AWS_DEFAULT_REGION ./deploy.sh -d
