@@ -42,10 +42,7 @@ do
 done
 
 shift "$((OPTIND-1))"   # Discard the options and sentinel --
-echo ${TRAVIS_PROFILE}
-echo $TRAVIS_AWS_ACCESS_KEY_ID
-echo $TRAVIS_AWS_SECRET_ACCESS_KEY
-echo $TRAVIS_AWS_DEFAULT_REGION
+
 export COMMIT=$(git rev-parse --short HEAD)
 
 if ! aws configure --profile $TRAVIS_PROFILE list
