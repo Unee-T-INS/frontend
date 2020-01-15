@@ -34,7 +34,7 @@ services:
 env:
   global:
     - COMMIT=${TRAVIS_COMMIT::7}
-    #Add IAMGE_TAG variable to build docker image
+    #Add IMAGE_TAG variable to build docker image
     - IMAGE_TAG=${TRAVIS_COMMIT::7}
 
 before_install:
@@ -73,7 +73,7 @@ matrix:
   include:
     # add deploy stage for dev
     - env: DEPLOY=dev
-      if: branch = remove_hard_coded_variables
+      if: branch = master
       deploy:
         provider: script
         script: PROFILE=$AWS_PROFILE_DEV AWS_ACCESS_KEY_ID=$AWS_ACCOUNT_USER_ID_DEV AWS_SECRET_ACCESS_KEY=$AWS_ACCOUNT_SECRET_DEV AWS_REGION=$AWS_DEFAULT_REGION ./deploy.sh -d
