@@ -87,7 +87,7 @@ user: ${user.emails[0].address}`
         {this.routeDrawerItem('/unit', {
           href: '/unit',
           iconName: 'location_on',
-          text: 'Units'
+          text: 'Insurance Policy'
         })}
         {/* {this.routeDrawerItem('/report', {
           href: '/report',

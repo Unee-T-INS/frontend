@@ -11,7 +11,7 @@ import {
 
 export const renderAppBarLeft = onClick => (
   <div className="flex items-center pl2">
-    <UneeTLogoText />
+    {/* <UneeTLogoText /> */}
     <IconButton
       iconStyle={logoIconStyle}
       style={logoButtonStyle}

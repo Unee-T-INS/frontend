@@ -29,10 +29,10 @@ export const invite = (user, invitedBy) => {
       text: `Hi,
 
 ${invitorUsername || invitorEmailAddress},
-the ${roleStr} for the unit ${unitName}
+the ${roleStr} for the insurance policy ${unitName}
 ${unitDesc}
-has invited you to collaborate on the case [${caseTitle}]
-as the ${inviteeRole} for that unit.
+Has invited you to collaborate on the case [${caseTitle}]
+As the ${inviteeRole} for that claim.
 
 Please click on the link to get more information about the case and reply to ${invitorUsername || 'him'}:
 ${url.resolve(process.env.ROOT_URL, `/invitation?code=${accessToken}`)}

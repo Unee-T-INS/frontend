@@ -75,91 +75,83 @@ class UnitSelectDialog extends Component {
       </div>
     );
     return (
-      <div className="flex items-center">
-        > Insurance Policy
-        <Dialog
-          title="Select your unit"
-          actions={actions}
-          titleStyle={customTitleStyle}
-          open={show}
-          repositionOnUpdate
-          contentStyle={{
-            width: "90%",
-            height: "90%"
-          }}
-          bodyStyle={customBodyStyle}
-          actionsContainerStyle={{
-            padding: "8px 16px 16px 16px"
-          }}
-        >
-          {!inProgress && (
-            <button
-              onClick={onDismissed}
-              className="button b--none bg-transparent absolute top-1 right-1"
+      <Dialog
+        title="Insurance Policy"
+        actions={actions}
+        titleStyle={customTitleStyle}
+        open={show}
+        repositionOnUpdate
+        contentStyle={{
+          width: "90%",
+          height: "90%"
+        }}
+        bodyStyle={customBodyStyle}
+        actionsContainerStyle={{
+          padding: "8px 16px 16px 16px"
+        }}
+      >
+        {!inProgress && (
+          <button
+            onClick={onDismissed}
+            className="button b--none bg-transparent absolute top-1 right-1"
+          >
+            <FontIcon className="material-icons" style={closeDialogButtonStyle}>
+              close
+            </FontIcon>
+          </button>
+        )}
+        <div>
+          <div className="ba b--moon-gray mt1 mb2 br1 pv1 flex items-center">
+            <FontIcon
+              className={"material-icons ml1"}
+              style={closeDialogButtonStyle}
             >
-              <FontIcon
-                className="material-icons"
-                style={closeDialogButtonStyle}
-              >
-                close
-              </FontIcon>
-            </button>
-          )}
-          <div>
-            <div className="ba b--moon-gray mt1 mb2 br1 pv1 flex items-center">
-              <FontIcon
-                className={"material-icons ml1"}
-                style={closeDialogButtonStyle}
-              >
-                search
-              </FontIcon>
-              <TextField
-                hintText="Unit names"
-                underlineShow={false}
-                fullWidth
-                value={searchText}
-                onChange={evt => this.onSearchChanged(evt.target.value)}
-                style={{ paddingLeft: "0.5rem", height: "24px" }}
-                hintStyle={{ bottom: "0px" }}
-              />
-            </div>
+              search
+            </FontIcon>
+            <TextField
+              hintText="Unit names"
+              underlineShow={false}
+              fullWidth
+              value={searchText}
+              onChange={evt => this.onSearchChanged(evt.target.value)}
+              style={{ paddingLeft: "0.5rem", height: "24px" }}
+              hintStyle={{ bottom: "0px" }}
+            />
           </div>
-          <div className="ba b--moon-gray br1 flex flex-column flex-grow overflow-auto">
-            {units.length && this.shownOnce ? (
-              <div>
-                {units.map(({ name, metaData, description, id }) => (
-                  <div key={name}>
-                    <MenuItem
-                      innerDivStyle={resetMenuItemDivStyle}
-                      onClick={() => onUnitClick(id)}
-                      style={{ whiteSpace: "none" }}
-                    >
-                      <div className="bt b--very-light-gray br1 w-100 pl2 flex items-center">
-                        <UnitTypeIcon
-                          unitType={metaData ? metaData.unitType : ""}
-                        />
-                        <div
-                          className={"ml3 mv2 semi-dark-gray lh-copy flex-grow"}
-                        >
-                          <div>
-                            {(metaData && metaData.displayName) || name}
-                          </div>
-                        </div>
+        </div>
+        <div className="ba b--moon-gray br1 flex flex-column flex-grow overflow-auto">
+          {units.length && this.shownOnce ? (
+            <div>
+              {units.map(({ name, metaData, description, id }) => (
+                <div key={name}>
+                  <MenuItem
+                    innerDivStyle={resetMenuItemDivStyle}
+                    onClick={() => onUnitClick(id)}
+                    style={{ whiteSpace: "none" }}
+                  >
+                    <div className="bt b--very-light-gray br1 w-100 pl2 flex items-center">
+                      <UnitTypeIcon
+                        unitType={metaData ? metaData.unitType : ""}
+                      />
+                      <div
+                        className={"ml3 mv2 semi-dark-gray lh-copy flex-grow"}
+                      >
+                        <div>{(metaData && metaData.displayName) || name}</div>
                       </div>
-                    </MenuItem>
-                  </div>
-                ))}
-              </div>
-            ) : !isLoading ? (
-              <NoItemMsg item="unit" />
-            ) : (
-              <div className="flex-grow flex items-center justify-center">
-                <CircularProgress size={80} />
-              </div>
-            )}
-          </div>
-        </Dialog>
-      </div>
+                    </div>
+                  </MenuItem>
+                </div>
+              ))}
+            </div>
+          ) : !isLoading ? (
+            <NoItemMsg item="unit" />
+          ) : (
+            <div className="flex-grow flex items-center justify-center">
+              <CircularProgress size={80} />
+            </div>
+          )}
+        </div>
+      </Dialog>
     );
   }
 }

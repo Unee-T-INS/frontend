@@ -90,7 +90,7 @@ class CaseWizard extends Component {
 
   renderRadioButtons = () => {
     const { inProgress } = this.props
-    return this.filterRolesBasedOnOwnership().map(({ type }) => (
+    return this.filterRolesBasedOnOwnership().map(({ type }) => (      
       <RadioButton
         key={type} value={type} label={type} disabled={inProgress}
       />
@@ -205,7 +205,7 @@ class CaseWizard extends Component {
     const activeFloorPlan = this.getActiveFloorPlan()
     return (
       <div className='full-height flex flex-column'>
-        <InnerAppBar title='New Claims' onBack={() => dispatch(goBack())} />
+        <InnerAppBar title='New Case' onBack={() => dispatch(goBack())} />
         <form onSubmit={this.handleSubmit}>
           <div className='overflow-auto flex-grow pa3' ref='scrollPane'>
             {infoItemMembers('Insurance Policy', unitItem.displayName || unitItem.name)}

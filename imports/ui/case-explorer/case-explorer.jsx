@@ -249,7 +249,7 @@ class CaseExplorer extends Component {
           renderAfter={(
             <FlatButton primary fullWidth onClick={this.showSelectionDialog}>
               <div className='bondi-blue underline b'>
-                Add case to another unit
+                Add case to another insurance policy
               </div>
             </FlatButton>
           )}
