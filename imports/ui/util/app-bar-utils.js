@@ -1,31 +1,45 @@
-import React from 'react'
-import IconButton from 'material-ui/IconButton'
-import UserAvatar from '../components/user-avatar'
-import { getColorForUser } from '/imports/util/user.js'
-import { UneeTIcon, UneeTLogoText } from '../components/unee-t-icons'
+import React from "react";
+import IconButton from "material-ui/IconButton";
+import UserAvatar from "../components/user-avatar";
+import { getColorForUser } from "/imports/util/user.js";
+import { UneeTIcon, UneeTLogoText } from "../components/unee-t-icons";
 
 import {
   logoIconStyle,
   logoButtonStyle
-} from '../components/app-bar.mui-styles'
+} from "../components/app-bar.mui-styles";
 
-export const renderAppBarLeft = (onClick) => (
-  <div className='flex items-center pl2'>
+export const renderAppBarLeft = onClick => (
+  <div className="flex items-center pl2">
     <UneeTLogoText />
-    <IconButton iconStyle={logoIconStyle} style={logoButtonStyle} onClick={onClick}>
-      <UneeTIcon />
+    <IconButton
+      iconStyle={logoIconStyle}
+      style={logoButtonStyle}
+      onClick={onClick}
+    >
+      {/* <UneeTIcon /> */}
+      <img
+        src="/logo-stark-group-dark.jpg"
+        style={{ width: "3rem", height: "3rem" }}
+        alt="logo"
+      />
     </IconButton>
   </div>
-)
+);
 
 export const renderCurrUserAvatar = (user, isBig) => {
-  const userColor = getColorForUser(user)
+  const userColor = getColorForUser(user);
 
   return (
-    <UserAvatar additionalClasses={`ba ${userColor}`} isBig={isBig} imageUrl={user.profile.avatarUrl} user={{
-      name: user.profile && user.profile.name,
-      login: user.bugzillaCreds && user.bugzillaCreds.login,
-      email: user.emails && user.emails[0].address
-    }} />
-  )
-}
+    <UserAvatar
+      additionalClasses={`ba ${userColor}`}
+      isBig={isBig}
+      imageUrl={user.profile.avatarUrl}
+      user={{
+        name: user.profile && user.profile.name,
+        login: user.bugzillaCreds && user.bugzillaCreds.login,
+        email: user.emails && user.emails[0].address
+      }}
+    />
+  );
+};

@@ -89,11 +89,11 @@ user: ${user.emails[0].address}`
           iconName: 'location_on',
           text: 'Units'
         })}
-        {this.routeDrawerItem('/report', {
+        {/* {this.routeDrawerItem('/report', {
           href: '/report',
           iconRenderer: <ReportIcon isFinalized />,
           text: 'Inspection Reports'
-        })}
+        })} */}
         {this.routeDrawerItem('/case', {
           href: '/case',
           iconName: 'card_travel',

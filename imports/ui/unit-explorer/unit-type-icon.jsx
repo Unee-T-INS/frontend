@@ -35,7 +35,7 @@ export default class UnitTypeIcon extends Component {
       ? iconDict[unitType]
       : 'not_listed_location'
     return (
-      <FontIcon className='material-icons' color='var(--semi-dark-gray)' style={unitIconsStyle}>
+      <FontIcon className='material-icons' color='var(--bondi-blue)' style={unitIconsStyle}>
         {iconName}
       </FontIcon>
     )

@@ -205,17 +205,17 @@ class CaseWizard extends Component {
     const activeFloorPlan = this.getActiveFloorPlan()
     return (
       <div className='full-height flex flex-column'>
-        <InnerAppBar title='New Case' onBack={() => dispatch(goBack())} />
+        <InnerAppBar title='New Claims' onBack={() => dispatch(goBack())} />
         <form onSubmit={this.handleSubmit}>
           <div className='overflow-auto flex-grow pa3' ref='scrollPane'>
-            {infoItemMembers('Unit', unitItem.displayName || unitItem.name)}
+            {infoItemMembers('Insurance Policy', unitItem.displayName || unitItem.name)}
             {reportItem && (
               <div className='mt2 pt1'>
                 {infoItemMembers('Report', reportItem.title)}
               </div>
             )}
             <TextField
-              floatingLabelText='Case title *'
+              floatingLabelText='Claim title *'
               floatingLabelShrinkStyle={textInputFloatingLabelStyle}
               underlineFocusStyle={textInputUnderlineFocusStyle}
               inputStyle={textInputStyle}
@@ -307,7 +307,7 @@ class CaseWizard extends Component {
             <div className='mt1'>
               <div className='flex items-center'>
                 <MarkerIcon style={{ width: '12px', height: '17px' }} fillColor='var(--bondi-blue)' />
-                <div className='ml2 f6 b bondi-blue'>Pin on Floor plan</div>
+                <div className='ml2 f6 b bondi-blue'>Pin on Policy Documents</div>
               </div>
               <div className='mt3'>
                 <FloorPlanUploader unitMetaData={unitItem}>

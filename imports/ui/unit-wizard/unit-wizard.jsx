@@ -103,12 +103,12 @@ class UnitWizard extends Component {
     const { inProgress, error, dispatch } = this.props
     return (
       <div className='full-height flex flex-column overflow-hidden'>
-        <InnerAppBar title='Enter Unit Details' onBack={() => dispatch(goBack())} />
+        <InnerAppBar title='Enter Policy Details' onBack={() => dispatch(goBack())} />
         <form className='overflow-auto flex-grow flex flex-column'>
           <div className='flex-grow bg-very-light-gray'>
             <div className='bg-white card-shadow-1 pa3'>
               <InputRow
-                label='Unit Name'
+                label='Policy Number'
                 value={name}
                 disabled={inProgress}
                 onChange={this.createTextStateHandler('name')}
@@ -116,7 +116,7 @@ class UnitWizard extends Component {
               <p className='f7 gray ma0 mt1'>This will be displayed to everyone involved in the unit.</p>
               <SelectField
                 value={type}
-                floatingLabelText='Unit Type'
+                floatingLabelText='Policy Type'
                 disabled={inProgress}
                 fullWidth
                 onChange={(evt, idx, val) => {
@@ -145,7 +145,7 @@ class UnitWizard extends Component {
                   <MenuItem key={role.name} value={role} primaryText={role.name} />
                 ))}
               </SelectField>
-              {role && role.canBeOccupant && (
+              {/* {role && role.canBeOccupant && (
                 <Checkbox
                   label='I am also the occupant of this unit'
                   labelStyle={controlLabelStyle}
@@ -153,9 +153,9 @@ class UnitWizard extends Component {
                   disabled={inProgress}
                   onCheck={(evt, isChecked) => { this.setState({ isOccupant: isChecked }) }}
                 />
-              )}
+              )} */}
               <InputRow
-                label='Additional Description'
+                label='Name of Product'
                 value={moreInfo}
                 disabled={inProgress}
                 onChange={this.createTextStateHandler('moreInfo')}
@@ -163,22 +163,22 @@ class UnitWizard extends Component {
               />
             </div>
             <div className='bg-white card-shadow-1 pa3 mt3'>
-              <div className='mt1 silver fw5'>ADDRESS</div>
+              <div className='mt1 silver fw5'>DETAILS (optional)</div>
               <InputRow
-                label='Address'
+                label='Premium'
                 value={streetAddress}
                 disabled={inProgress}
                 onChange={this.createTextStateHandler('streetAddress')}
                 isMultiLine
               />
               <InputRow
-                label='City'
+                label='From to'
                 value={city}
                 disabled={inProgress}
                 onChange={this.createTextStateHandler('city')}
               />
               <AutoComplete
-                floatingLabelText='Country'
+                floatingLabelText='Insurer'
                 fullWidth
                 anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
                 targetOrigin={{ vertical: 'bottom', horizontal: 'left' }}

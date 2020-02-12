@@ -97,7 +97,7 @@ class FloorPlanUploader extends React.Component<Props> {
             <div className='flex items-center justify-center'>
               <UploadIcon fillColor='var(--bondi-blue)' />
               <div className='ml1 bondi-blue fw5 f6'>
-                Upload floor plan
+              Upload Policy Schedule or Documents
               </div>
             </div>
           </FileInput>

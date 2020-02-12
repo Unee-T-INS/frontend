@@ -238,7 +238,7 @@ class UnitOverviewTab extends React.Component<Props, State> {
             </div>
           </div>
           <div className='mt2 bg-white card-shadow-1 pa3'>
-            {infoItemLabel('Floor plan')}
+            {infoItemLabel('Policy Documents')}
             <div className='mt2'>
               <FloorPlanUploader
                 unitMetaData={metaData}

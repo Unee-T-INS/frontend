@@ -20,11 +20,11 @@ import { getIncrementFor } from './increment-counters'
 
 export const collectionName = 'unitRolesData'
 export const roleEnum = {
-  TENANT: 'Tenant',
-  OWNER_LANDLORD: 'Owner/Landlord',
-  CONTRACTOR: 'Contractor',
-  MGT_COMPANY: 'Management Company',
-  AGENT: 'Agent'
+  TENANT: 'Account Manager(Agent, FA)',
+  OWNER_LANDLORD: 'PolicyHolder',
+  CONTRACTOR: 'Insurer',
+  MGT_COMPANY: 'My Human Resource Manager',
+  AGENT: 'Others'
 }
 export const possibleRoles = [
   {
