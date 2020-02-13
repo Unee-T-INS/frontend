@@ -266,9 +266,9 @@ class CaseDetails extends Component {
     </InfoItemContainer>
   )
 
-  renderUnitName = unitItem => <InfoItemRow label='Policy Details:' value={unitItem.name} />
+  renderUnitName = unitItem => <InfoItemRow label='Policy details:' value={unitItem.name} />
 
-  renderUnitDescription = unitItem => <InfoItemRow label='Insurance Policy description:' value={unitItem.description} />
+  renderUnitDescription = unitItem => <InfoItemRow label='Insurance policy description:' value={unitItem.description} />
 
   renderStatusLine = ({ status }, { status: statusDef }) => {
     const { immediateStatusVal } = this.state

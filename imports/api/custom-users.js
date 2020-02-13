@@ -47,11 +47,11 @@ export const defaultNotificationSettings = {
     'StatusResolved': true
   },
   caseNewMessage_types: {
-    'Tenant': true,
-    'Owner/Landlord': true,
-    'Contractor': true,
-    'Management Company': true,
-    'Agent': true
+    'My Account Manager': true,
+    'My HR': true,
+    'PolicyHolder': true,
+    'My Insurer': true,
+    'Other': true
   },
   severityOverrideThreshold: null
 }

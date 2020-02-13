@@ -128,8 +128,8 @@ class UnitExplorer extends Component {
     return (
       <div className='flex flex-column flex-grow full-height'>
         <RootAppBar
-          title='My Units'
-          placeholder='Search units...'
+          title='My Policies'
+          placeholder='Search policy...'
           onIconClick={() => dispatch(setDrawerState(true))}
           shadowless
           searchText={searchText}
