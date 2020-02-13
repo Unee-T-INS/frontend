@@ -30,7 +30,7 @@ class UnitRoleSelect extends Component {
     return (
       <div>
         <SelectField
-          floatingLabelText='Relationship to this unit'
+          floatingLabelText='Relationship to this Insurance policy'
           floatingLabelFixed
           fullWidth
           floatingLabelStyle={textInputFloatingLabelStyle}

@@ -180,7 +180,7 @@ class UnitExplorer extends Component {
                   <Link to='/unit/new'>
                     <FlatButton primary fullWidth>
                       <div className='bondi-blue underline b'>
-                        Add another unit
+                        Add another insurance policy
                       </div>
                     </FlatButton>
                   </Link>

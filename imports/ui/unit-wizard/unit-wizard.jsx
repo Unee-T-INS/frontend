@@ -130,7 +130,7 @@ class UnitWizard extends Component {
                 ))}
               </SelectField>
               <SelectField
-                floatingLabelText='Relationship to Unit'
+                floatingLabelText='Relationship to Insurance policy'
                 fullWidth
                 value={role}
                 disabled={inProgress}

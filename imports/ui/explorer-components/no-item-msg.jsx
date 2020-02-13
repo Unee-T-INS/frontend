@@ -20,7 +20,7 @@ export function NoItemMsg ({ item, iconType, buttonOption }) {
         </div>
         <div className='mt3 ph4'>
           <div className='mid-gray b lh-copy'>
-            <div>There are no {item}s that match your current filter combination.</div>
+            <div>No policies.</div>
             {buttonOption &&
               <div>Click on the "+" button to select a unit to add a new {item}</div>
             }

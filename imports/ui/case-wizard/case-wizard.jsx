@@ -208,7 +208,7 @@ class CaseWizard extends Component {
         <InnerAppBar title='New Case' onBack={() => dispatch(goBack())} />
         <form onSubmit={this.handleSubmit}>
           <div className='overflow-auto flex-grow pa3' ref='scrollPane'>
-            {infoItemMembers('Insurance Policy', unitItem.displayName || unitItem.name)}
+            {infoItemMembers('Policy', unitItem.displayName || unitItem.name)}
             {reportItem && (
               <div className='mt2 pt1'>
                 {infoItemMembers('Report', reportItem.title)}
