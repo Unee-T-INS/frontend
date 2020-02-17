@@ -6,70 +6,22 @@ import UnitRolesData from "./unit-roles-data";
 export const collectionName = "unitMetaData";
 export const unitTypes = Object.freeze([
   {
-    name: 'Apartment/Flat'
+    name: 'Life'
   },
   {
-    name: 'House'
+    name: 'Commercial'
   },
   {
-    name: 'Room'
+    name: 'Retail'
   },
   {
-    name: 'Villa'
+    name: 'Health'
   },
   {
-    name: 'Office'
+    name: 'Marine'
   },
   {
-    name: 'Hotel'
-  },
-  {
-    name: 'Hotel Room'
-  },
-  {
-    name: 'Shop'
-  },
-  {
-    name: 'Salon'
-  },
-  {
-    name: 'Restaurant/Cafe'
-  },
-  {
-    name: 'Condominium'
-  },
-  {
-    name: 'Apartment Block'
-  },
-  {
-    name: 'Warehouse'
-  },
-  {
-    name: 'Shopping Mall'
-  },
-  {
-    name: 'Other'
-  },
-  {
-    name: 'Other/Building'
-  },
-  {
-    name: 'Other/Unit'
-  },
-  {
-    name: 'Other/Room'
-  },
-  {
-    name: 'Unknown'
-  },
-  {
-    name: 'Unknown/Building'
-  },
-  {
-    name: 'Unknown/Unit'
-  },
-  {
-    name: 'Unknown/Room'
+    name: 'Others'
   }
 ])
 
