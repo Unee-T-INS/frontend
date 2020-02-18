@@ -174,7 +174,8 @@ class CaseMaster extends Component {
                       <div className="flex flex-column items-center">
                         {/* <UneeTIcon style={emptyPaneIconStyle} /> */}
                         <FontIcon
-                          className="material-icons fa-5x"
+                          style={{ fontSize: "9em" }}
+                          className="material-icons"
                           color="var(--bondi-blue)"
                         >
                           policy
