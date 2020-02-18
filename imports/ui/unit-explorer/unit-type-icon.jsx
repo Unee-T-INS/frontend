@@ -4,11 +4,11 @@ import FontIcon from "material-ui/FontIcon";
 import { unitIconsStyle } from "../case-explorer/case-explorer.mui-styles";
 
 const unitTypes = [
-  { icon: "home", categories: ["Life"] },
+  { icon: "person_pin", categories: ["Life"] },
   { icon: "local_hospital", categories: ["Health"] },
-  { icon: "local_shipping", categories: ["Marine"] },
-  { icon: "shopping_cart", categories: ["Commercial"] },
-  { icon: "business", categories: ["Retail"] },
+  { icon: "directions_boat", categories: ["Marine"] },
+  { icon: "apartment", categories: ["Commercial"] },
+  { icon: "directions_car", categories: ["Retail"] },
   {
     icon: "not_listed_location",
     categories: ["Others"]
