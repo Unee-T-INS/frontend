@@ -34,6 +34,7 @@ const allCreationFields = [
   'moreInfo',
   'streetAddress',
   'city',
+  'country',
   'state',
   'zipCode',
   'country',
@@ -55,6 +56,7 @@ class UnitWizard extends Component {
       moreInfo: '',
       streetAddress: '',
       city: '',
+      country: '',
       state: '',
       zipCode: '',
       country: '',
@@ -99,7 +101,7 @@ class UnitWizard extends Component {
   }
 
   render () {
-    const { name, type, role, moreInfo, streetAddress, city, zipCode, state, isOccupant } = this.state
+    const { name, type, role, moreInfo, streetAddress, city, country, zipCode, state, isOccupant } = this.state
     const { inProgress, error, dispatch } = this.props
     return (
       <div className='full-height flex flex-column overflow-hidden'>
@@ -177,7 +179,13 @@ class UnitWizard extends Component {
                 disabled={inProgress}
                 onChange={this.createTextStateHandler('city')}
               />
-              <AutoComplete
+               <InputRow
+                label='Insurer'
+                value={country}
+                disabled={inProgress}
+                onChange={this.createTextStateHandler('country')}
+              />
+              {/* <AutoComplete
                 floatingLabelText='Insurer'
                 fullWidth
                 anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
@@ -189,7 +197,7 @@ class UnitWizard extends Component {
                 onUpdateInput={this.handleUpdateInput}
                 searchText={this.state.searchText}
                 errorText={this.state.countryValid}
-              />
+              /> */}
               <InputRow
                 label='Administrative Region'
                 value={state}
