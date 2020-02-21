@@ -70,7 +70,7 @@ class UnitSelectDialog extends Component {
           }
           to={`/unit/new`}
         >
-          Add a new unit
+          Add a new policy
         </Link>
       </div>
     );
