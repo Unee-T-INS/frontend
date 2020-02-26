@@ -2,7 +2,7 @@ import emailResponsiveStyleTag from './email-responsive-style-tag'
 import { resolveUserName } from './helpers'
 
 // const defaultLogoUrl = 'https://s3-ap-southeast-1.amazonaws.com/prod-media-unee-t/2018-06-14/unee-t_logo_email.png'
-const defaultLogoUrl = '/public/logo-stark-group-dark.jpg'
+const defaultLogoUrl = '/logo-stark-group-dark.jpg'
 const defBrandConfig = {
   logoUrl: null,
   brandName: null,
