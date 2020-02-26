@@ -72,20 +72,20 @@ export class SignupPage extends React.Component<Props, State> {
           })
         }
       },
-      {
-        label: 'Promo code',
-        identifier: 'promoCode',
-        optional: true,
-        placeholder: 'Signing up for a promo?',
-        type: 'text',
-        onChange: (evt) => {
-          const { value } = evt.target
-          const { info } = this.state
-          this.setState({
-            info: Object.assign({}, info, { promoCode: value })
-          })
-        }
-      }
+      // {
+      //   label: 'Promo code',
+      //   identifier: 'promoCode',
+      //   optional: true,
+      //   placeholder: 'Signing up for a promo?',
+      //   type: 'text',
+      //   onChange: (evt) => {
+      //     const { value } = evt.target
+      //     const { info } = this.state
+      //     this.setState({
+      //       info: Object.assign({}, info, { promoCode: value })
+      //     })
+      //   }
+      // }
     ]
 
     this.inputs.forEach(({ identifier }) => { this.state.info[identifier] = '' })

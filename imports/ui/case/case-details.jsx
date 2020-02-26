@@ -650,7 +650,7 @@ class CaseDetails extends Component {
       <div className='bt bw3 b--light-gray ph3 pv2'>
         <div className='flex'>
           <div className='flex-grow'>
-            {infoItemLabel('Location on floor plan')}
+            {infoItemLabel('Documents')}
           </div>
           {floorPlan && (
             <a className='mt1 link f7 bondi-blue underline' onClick={() => {

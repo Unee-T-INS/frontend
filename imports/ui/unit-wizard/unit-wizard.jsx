@@ -132,7 +132,7 @@ class UnitWizard extends Component {
                 ))}
               </SelectField>
               <SelectField
-                floatingLabelText='Relationship to Insurance policy'
+                floatingLabelText='My Relationship to the Policy is'
                 fullWidth
                 value={role}
                 disabled={inProgress}
@@ -226,7 +226,7 @@ class UnitWizard extends Component {
               <CircularProgress color='white' size={30} />
             </div>
           ) : (
-            <div className='f4 white'>Add Unit</div>
+            <div className='f4 white'>Add the Policy</div>
           )}
         </RaisedButton>
         <ErrorDialog show={!!error} text={error || ''} onDismissed={() => dispatch(clearError())} />

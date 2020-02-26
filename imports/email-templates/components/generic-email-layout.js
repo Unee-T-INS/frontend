@@ -1,25 +1,26 @@
 import emailResponsiveStyleTag from './email-responsive-style-tag'
 import { resolveUserName } from './helpers'
 
-const defaultLogoUrl = 'https://s3-ap-southeast-1.amazonaws.com/prod-media-unee-t/2018-06-14/unee-t_logo_email.png'
+// const defaultLogoUrl = 'https://s3-ap-southeast-1.amazonaws.com/prod-media-unee-t/2018-06-14/unee-t_logo_email.png'
+const defaultLogoUrl = '/public/logo-stark-group-dark.jpg'
 const defBrandConfig = {
   logoUrl: null,
   brandName: null,
   signatureHtml: null,
   signatureText: null
 }
-const uneetTagLine = 'THE Web App to Manage Incidents in your Properties'
+const uneetTagLine = 'We facilitate your insurance processes'
 
 const defaultSignatureHtml = `
     <p>
       Regards,<br />
-      Unee-T<br />
+      Unee-T-Insurance<br />
       ${uneetTagLine}
     </p>
   `
 const defaultSignatureText = `
   Regards,
-  Unee-T
+  Unee-T-Insurance
   ${uneetTagLine}
 `
 
@@ -51,7 +52,7 @@ export const getHtml = ({ title, brandConfig, mainContentHtml, reasonExplanation
                         <div class="align-right">
                           <img class="logo" src="${brandConfig.logoUrl || defaultLogoUrl}"/>
                         </div>
-                        <p>Hi ${resolveUserName(user)}</p>
+                        <p>Dear ${resolveUserName(user)},</p>
                         ${mainContentHtml}
                         ${brandConfig.signatureHtml || defaultSignatureHtml}
                         <hr />
@@ -74,8 +75,8 @@ export const getHtml = ({ title, brandConfig, mainContentHtml, reasonExplanation
               <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                 <tr>
                   <td class="content-block powered-by">
-                    <div>Powered by <a href="https://unee-t.com"><img src="${defaultLogoUrl}"/></a>.</div>
-                    ${brandConfig.signatureHtml ? `<div>Unee-T: ${uneetTagLine}</div>` : ''}
+                    <div>Powered by Unee-T-Insurance</div>
+                    // ${brandConfig.signatureHtml ? `<div>Unee-T: ${uneetTagLine}</div>` : ''}
                   </td>
                 </tr>
               </table>

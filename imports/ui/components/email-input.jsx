@@ -40,7 +40,7 @@ class EmailInput extends Component {
     const { disabled, label, inputRef, email } = this.props
     return (
       <TextField
-        hintText='Type the email address'
+        hintText='Type the email address of'
         floatingLabelText={label}
         errorText={emailError}
         floatingLabelFixed

@@ -98,13 +98,13 @@ export default class RootAppBar extends React.Component<Props> {
         }
         iconElementRight={
           <div className="flex items-center">
-            <span className={!showSearch || searchActive ? "dn" : ""}>
+            {/* <span className={!showSearch || searchActive ? "dn" : ""}>
               <IconButton onClick={onSearchRequested}>
                 <FontIcon className="material-icons" color="white">
                   search
                 </FontIcon>
               </IconButton>
-            </span>
+            </span> */}
             <IconButton>
               <FontIcon className="material-icons" color="white">
                 notifications

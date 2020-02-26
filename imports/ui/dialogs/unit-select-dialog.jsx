@@ -70,13 +70,13 @@ class UnitSelectDialog extends Component {
           }
           to={`/unit/new`}
         >
-          Add a new policy
+          Create a Policy not in Policy Management
         </Link>
       </div>
     );
     return (
       <Dialog
-        title="Insurance Policy"
+        title="Select the Policy Number"
         actions={actions}
         titleStyle={customTitleStyle}
         open={show}
@@ -109,7 +109,7 @@ class UnitSelectDialog extends Component {
               search
             </FontIcon>
             <TextField
-              hintText="Unit names"
+              hintText="Search by Policy Number"
               underlineShow={false}
               fullWidth
               value={searchText}
@@ -119,7 +119,7 @@ class UnitSelectDialog extends Component {
             />
           </div>
         </div>
-        <div className="ba b--moon-gray br1 flex flex-column flex-grow overflow-auto">
+        <div className="ba b--moon-gray br1 flex flex-column flex-grow overflow-auto min-h-4">
           {units.length && this.shownOnce ? (
             <div>
               {units.map(({ name, metaData, description, id }) => (

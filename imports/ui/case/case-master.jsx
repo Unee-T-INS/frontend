@@ -106,9 +106,9 @@ class CaseMaster extends Component {
             onIconClick={this.handleIconClick}
             rightSideElement={
               <div className="flex items-center">
-                <div className="white">
+                {/* <div className="white">
                   Welcome, {user.profile && user.profile.name}
-                </div>
+                </div> */}
                 <div className="ml2">{renderCurrUserAvatar(user)}</div>
               </div>
             }
@@ -150,7 +150,7 @@ class CaseMaster extends Component {
                 }}
               />
             </div>
-            <div className="flex-10 flex items-center justify-center bg-very-light-gray h-100">
+            <div className="flex-10 flex items-center justify-center b--gray-93 h-100">
               <Route
                 path="/case/:caseId"
                 children={({ match }) => {

@@ -208,14 +208,14 @@ class CaseWizard extends Component {
         <InnerAppBar title='New Case' onBack={() => dispatch(goBack())} />
         <form onSubmit={this.handleSubmit}>
           <div className='overflow-auto flex-grow pa3' ref='scrollPane'>
-            {infoItemMembers('Policy', unitItem.displayName || unitItem.name)}
+            {infoItemMembers('Policy number', unitItem.displayName || unitItem.name)}
             {reportItem && (
               <div className='mt2 pt1'>
                 {infoItemMembers('Report', reportItem.title)}
               </div>
             )}
             <TextField
-              floatingLabelText='Claim title *'
+              floatingLabelText='Case title *'
               floatingLabelShrinkStyle={textInputFloatingLabelStyle}
               underlineFocusStyle={textInputUnderlineFocusStyle}
               inputStyle={textInputStyle}
@@ -365,10 +365,9 @@ class CaseWizard extends Component {
             {needsNewUser && (
               <div className='mt3'>
                 <p className='mv0 pv0 f7 warn-crimson lh-copy'>
-                  There is no one in the role of {assignedUnitRole} for this unit yet. Invite a new user to fill
-                  the {assignedUnitRole} role or select a different role.
+                  There is no one assigned as {assignedUnitRole} company for this Policy yet.
                 </p>
-                <InputRow label={`Email of the ${assignedUnitRole} to invite *`} value={newUserEmail} inpType='email'
+                <InputRow label={`Please add the email to invite such role to join *`} value={newUserEmail} inpType='email'
                   onChange={(evt, val) => this.setState({ newUserEmail: val })}
                   errorText={(newUserEmail && !emailValidator(newUserEmail)) ? 'Email address is invalid' : ''}
                   inpRef={el => { this.emailInputEl = el }}

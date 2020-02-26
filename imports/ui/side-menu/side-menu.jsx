@@ -78,7 +78,7 @@ user: ${user.emails[0].address}`
                   {user.profile && (user.profile.name || user.emails[0].address)}
                 </div>
                 <div className='mt2 bg-very-light-gray br1 bondi-blue lh-dbl tc fw5 f7 dib ph2 w-content'>
-                  STANDARD
+                  EDIT
                 </div>
               </div>
             </div>
@@ -86,8 +86,8 @@ user: ${user.emails[0].address}`
         </div>
         {this.routeDrawerItem('/unit', {
           href: '/unit',
-          iconName: 'location_on',
-          text: 'Insurance Policy'
+          iconName: 'beach_access',
+          text: 'Policy Management'
         })}
         {/* {this.routeDrawerItem('/report', {
           href: '/report',
@@ -97,17 +97,17 @@ user: ${user.emails[0].address}`
         {this.routeDrawerItem('/case', {
           href: '/case',
           iconName: 'card_travel',
-          text: 'Open Cases'
+          text: 'Case Management'
         })}
         <Divider />
-        {this.linkDrawerItem({
+        {/* {this.linkDrawerItem({
           href: 'mailto:support@unee-t.com?subject=' + window.location.href + '&body=' + encodeURIComponent(supportEmailBody),
           iconName: 'live_help',
           text: 'Support',
           isExternal: true
-        })}
+        })} */}
         {this.linkDrawerItem({
-          href: 'https://documentation.unee-t.com',
+          href: 'http://www.insurance-republic.com/uneet-insurance-faq.html',
           iconName: 'help',
           text: 'FAQ',
           isExternal: true
