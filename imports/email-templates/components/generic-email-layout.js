@@ -2,7 +2,7 @@ import emailResponsiveStyleTag from './email-responsive-style-tag'
 import { resolveUserName } from './helpers'
 
 // const defaultLogoUrl = 'https://s3-ap-southeast-1.amazonaws.com/prod-media-unee-t/2018-06-14/unee-t_logo_email.png'
-const defaultLogoUrl = '/logo-stark-group-dark.jpg'
+const defaultLogoUrl = 'https://case.dev.ins.unee-t.com/logo-stark-group-dark.jpg'
 const defBrandConfig = {
   logoUrl: null,
   brandName: null,
@@ -50,7 +50,7 @@ export const getHtml = ({ title, brandConfig, mainContentHtml, reasonExplanation
                     <tr>
                       <td>
                         <div class="align-right">
-                          <img class="logo" src="${brandConfig.logoUrl || defaultLogoUrl}"/>
+                          <img class="logo" src="${defaultLogoUrl}"/>
                         </div>
                         <p>Dear ${resolveUserName(user)},</p>
                         ${mainContentHtml}
