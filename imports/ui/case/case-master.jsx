@@ -80,7 +80,7 @@ class CaseMaster extends Component {
 
   render() {
     const { isLoading, componentsProps } = this.state;
-    const { user } = this.props;
+    const { user, dispatch } = this.props;
     return (
       <div className="flex flex-column full-height roboto overflow-hidden">
         {isLoading ? (
@@ -109,7 +109,12 @@ class CaseMaster extends Component {
                 {/* <div className="white">
                   Welcome, {user.profile && user.profile.name}
                 </div> */}
-                <div className="ml2">{renderCurrUserAvatar(user)}</div>
+                <div
+                  className="ml2"
+                  onClick={dispatch(push("/account-settings"))}
+                >
+                  {renderCurrUserAvatar(user)}
+                </div>
               </div>
             }
           />
