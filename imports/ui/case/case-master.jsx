@@ -13,7 +13,6 @@ import Case from "./case";
 import { emptyPaneIconStyle } from "./case-master.mui-styles";
 import { renderCurrUserAvatar } from "../util/app-bar-utils";
 import { FontIcon } from "material-ui";
-import { push } from "react-router-redux";
 
 const isMobileScreen = window.matchMedia("screen and (max-width: 768px)")
   .matches;
@@ -110,12 +109,7 @@ class CaseMaster extends Component {
                 {/* <div className="white">
                   Welcome, {user.profile && user.profile.name}
                 </div> */}
-                <div
-                  className="ml2"
-                  onClick={dispatch(push("/account-settings"))}
-                >
-                  {renderCurrUserAvatar(user)}
-                </div>
+                <div className="ml2">{renderCurrUserAvatar(user)}</div>
               </div>
             }
           />
