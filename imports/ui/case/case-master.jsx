@@ -13,6 +13,7 @@ import Case from "./case";
 import { emptyPaneIconStyle } from "./case-master.mui-styles";
 import { renderCurrUserAvatar } from "../util/app-bar-utils";
 import { FontIcon } from "material-ui";
+import { push } from "react-router-redux";
 
 const isMobileScreen = window.matchMedia("screen and (max-width: 768px)")
   .matches;
