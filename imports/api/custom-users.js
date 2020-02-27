@@ -47,10 +47,10 @@ export const defaultNotificationSettings = {
     'StatusResolved': true
   },
   caseNewMessage_types: {
-    'My Account Manager': true,
-    'My HR': true,
-    'PolicyHolder': true,
-    'My Insurer': true,
+    'The Insurance Agent': true,
+    'The HR / Employee Benefit manager': true,
+    'The Policyholder/Beneficiary': true,
+    'The Insurance company': true,
     'Other': true
   },
   severityOverrideThreshold: null

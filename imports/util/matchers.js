@@ -25,5 +25,5 @@ export const floorPlanTextMatcher = text => {
 const isTemporaryEmail = /^temporary\..+@.+\..+\.?.*\.{0,2}.*$/
 export const placeholderEmailMatcher = email => isTemporaryEmail.test(email)
 
-const isRoleCanBeOccupant = /(my hr|my account manager)/i
+const isRoleCanBeOccupant = /(the hr / employee benefit manager|the insurance agent)/i
 export const roleCanBeOccupantMatcher = roleName => isRoleCanBeOccupant.test(roleName)

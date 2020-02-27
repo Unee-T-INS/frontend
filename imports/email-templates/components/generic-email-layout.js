@@ -1,15 +1,16 @@
-import emailResponsiveStyleTag from './email-responsive-style-tag'
-import { resolveUserName } from './helpers'
+import emailResponsiveStyleTag from "./email-responsive-style-tag";
+import { resolveUserName } from "./helpers";
 
 // const defaultLogoUrl = 'https://s3-ap-southeast-1.amazonaws.com/prod-media-unee-t/2018-06-14/unee-t_logo_email.png'
-const defaultLogoUrl = 'https://case.dev.ins.unee-t.com/logo-stark-group-dark.jpg'
+const defaultLogoUrl =
+  "https://case.dev.ins.unee-t.com/logo-stark-group-dark.jpg";
 const defBrandConfig = {
   logoUrl: null,
   brandName: null,
   signatureHtml: null,
   signatureText: null
-}
-const uneetTagLine = 'We facilitate your insurance processes'
+};
+const uneetTagLine = "We facilitate your insurance processes";
 
 const defaultSignatureHtml = `
     <p>
@@ -17,14 +18,21 @@ const defaultSignatureHtml = `
       Unee-T-Insurance<br />
       ${uneetTagLine}
     </p>
-  `
+  `;
 const defaultSignatureText = `
   Regards,
   Unee-T-Insurance
   ${uneetTagLine}
-`
+`;
 
-export const getHtml = ({ title, brandConfig, mainContentHtml, reasonExplanation, unsubClauseHtml = '', user }) => `
+export const getHtml = ({
+  title,
+  brandConfig,
+  mainContentHtml,
+  reasonExplanation,
+  unsubClauseHtml = "",
+  user
+}) => `
 <!doctype html>
 <html>
   <head>
@@ -76,7 +84,11 @@ export const getHtml = ({ title, brandConfig, mainContentHtml, reasonExplanation
                 <tr>
                   <td class="content-block powered-by">
                     <div>Powered by Unee-T-Insurance</div>
-                    // ${brandConfig.signatureHtml ? `<div>Unee-T: ${uneetTagLine}</div>` : ''}
+                    <!-- ${
+                      brandConfig.signatureHtml
+                        ? `<div>Unee-T: ${uneetTagLine}</div>`
+                        : ""
+                    }-->
                   </td>
                 </tr>
               </table>
@@ -90,9 +102,15 @@ export const getHtml = ({ title, brandConfig, mainContentHtml, reasonExplanation
     </table>
   </body>
 </html>
-`
+`;
 
-export const getText = ({ mainContentText, reasonExplanation, unsubClauseText = '', brandConfig, user }) => `
+export const getText = ({
+  mainContentText,
+  reasonExplanation,
+  unsubClauseText = "",
+  brandConfig,
+  user
+}) => `
 Hi ${resolveUserName(user)},
 
 ${mainContentText}
@@ -101,12 +119,25 @@ ${brandConfig.signatureText || defaultSignatureText}
 --
 You are receiving this email because ${reasonExplanation}.
 ${unsubClauseText}
-${brandConfig.signatureText ? `
+${
+  brandConfig.signatureText
+    ? `
 Unee-t: ${uneetTagLine}
-` : ''}
 `
+    : ""
+}
+`;
 
-export default ({ typeTitle, user, mainContentHtml, mainContentText, reasonExplanation, brandConfig = defBrandConfig, unsubClauseHtml, unsubClauseText }) => {
+export default ({
+  typeTitle,
+  user,
+  mainContentHtml,
+  mainContentText,
+  reasonExplanation,
+  brandConfig = defBrandConfig,
+  unsubClauseHtml,
+  unsubClauseText
+}) => {
   return {
     html: getHtml({
       typeTitle,
@@ -123,5 +154,5 @@ export default ({ typeTitle, user, mainContentHtml, mainContentText, reasonExpla
       unsubClauseText,
       reasonExplanation
     })
-  }
-}
+  };
+};

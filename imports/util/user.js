@@ -5,10 +5,10 @@ import UserAvatar from '../ui/components/user-avatar'
 
 export const rolesColorDict = {
   'Administrator': 'theme1',
-  'My Account Manager': 'theme2',
-  'My HR': 'theme3',
-  'PolicyHolder': 'theme4',
-  'My Insurer': 'theme5',
+  'The Insurance Agent': 'theme2',
+  'The HR / Employee Benefit manager': 'theme3',
+  'The Policyholder/Beneficiary': 'theme4',
+  'The Insurance company': 'theme5',
   'Other': 'theme6',
   'default': 'theme1'
 }
