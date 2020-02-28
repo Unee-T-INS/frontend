@@ -39,7 +39,7 @@ ${url.resolve(process.env.ROOT_URL, `/invitation?code=${accessToken}`)}
 
 ${footer}
 `,
-           html: `<img src="cid:logo@unee-t.com"/>
+           html: `<img src="cid:logo@unee-t.com" style={{ width: '150px' }}/>
 
 <p>Good day,</p>
 <p>
