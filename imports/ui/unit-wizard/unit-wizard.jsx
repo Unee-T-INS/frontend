@@ -174,11 +174,12 @@ class UnitWizard extends Component {
                 isMultiLine
               />
               <InputRow
-                label='From to'
+                label='Please indicate the effective date (From/To)'
+                placeholder="From: DD-MM-YYYY  To: DD-MM-YYYY"
                 value={city}
                 disabled={inProgress}
                 onChange={this.createTextStateHandler('city')}
-              />
+              />F
                <InputRow
                 label='Insurer'
                 value={country}
@@ -199,18 +200,18 @@ class UnitWizard extends Component {
                 errorText={this.state.countryValid}
               /> */}
               <InputRow
-                label='Administrative Region'
+                label='Additional Comment(s)'
                 value={state}
                 disabled={inProgress}
                 onChange={this.createTextStateHandler('state')}
               />
               <p className='f7 gray ma0 mt1'>State, province, prefecture, etc.</p>
-              <InputRow
+              {/* <InputRow
                 label='ZIP / Postal Code'
                 value={zipCode}
                 disabled={inProgress}
                 onChange={this.createTextStateHandler('zipCode')}
-              />
+              /> */}
             </div>
           </div>
         </form>

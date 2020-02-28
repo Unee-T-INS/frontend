@@ -18,6 +18,8 @@ const LoginLayout = ({ subHeading, footerContent, children }) => (
             style={{ width: "8rem", height: "8rem" }}
             alt="logo"
           />
+          <h3 className="f3 fw5 mt3 tc ph0 pt3">Unee-T-Insurance</h3>
+          <h2 className="f5 fw5 tc ph0 pt3">Simplifying insurance processes</h2>
         </div>
         <h3 className="f4 fw3 ph0 mh0 mt3 pt2 tc mid-gray">{subHeading}</h3>
         {children}

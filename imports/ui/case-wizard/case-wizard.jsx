@@ -373,7 +373,7 @@ class CaseWizard extends Component {
                   inpRef={el => { this.emailInputEl = el }}
                   disabled={inProgress}
                 />
-                {newUserCanBeOccupant && (
+                {/* {newUserCanBeOccupant && (
                   <Checkbox
                     label={`This ${assignedUnitRole} is also the occupant of this unit`}
                     labelStyle={controlLabelStyle}
@@ -381,7 +381,7 @@ class CaseWizard extends Component {
                     onCheck={(evt, isChecked) => { this.setState({ newUserIsOccupant: isChecked }) }}
                     disabled={inProgress}
                   />
-                )}
+                )} */}
               </div>
             )}
           </div>

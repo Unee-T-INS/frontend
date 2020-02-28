@@ -122,7 +122,7 @@ ${unsubClauseText}
 ${
   brandConfig.signatureText
     ? `
-Unee-t: ${uneetTagLine}
+Unee-T-Insurance: ${uneetTagLine}
 `
     : ""
 }

@@ -499,3 +499,9 @@
   -webkit-filter: blur(8px)
 }
 /* custom filters - end */
+
+.centered-element {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

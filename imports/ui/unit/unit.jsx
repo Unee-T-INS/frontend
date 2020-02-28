@@ -39,7 +39,7 @@ function NoItem ({ item, iconType }) {
         <FontIcon className='material-icons' color='var(--moon-gray)' style={{ fontSize: '5rem' }}>
           {iconType}
         </FontIcon>
-        <div className='absolute bottom-0 right-0 pb1'>
+        <div className='absolute bottom-0 right-0 center pb1'>
           <div className='br-100 ba b--very-light-gray bg-very-light-gray lh-cram'>
             <FontIcon className='material-icons' color='var(--moon-gray)' style={{ fontSize: '2.5rem' }}>
               add_circle_outline
@@ -346,7 +346,7 @@ class Unit extends Component {
               {fabDescriptors
                 .filter(desc => !desc.condition || desc.condition())
                 .map((desc, ind) => (
-                  <div key={ind} className='absolute bottom-1 right-1'>
+                  <div key={ind} className='absolute centered-element'>
                     <CSSTransition in={viewIdx === ind} timeout={500} classNames='zoom-effect' unmountOnExit>
                       <FloatingActionButton
                         backgroundColor={desc.color}

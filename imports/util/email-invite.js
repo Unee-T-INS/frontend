@@ -41,19 +41,21 @@ ${footer}
 `,
       html: `<img src="cid:logo@unee-t.com"/>
 
-<p>Hi,</p>
+<p>Good day,</p>
 <p>
 <br>${invitorUsername || invitorEmailAddress},
-<br>the ${roleStr} for the unit
+<br>the ${roleStr} for the policy
 <br><b>${unitName}</b>
 <br>${unitDesc}
-<br>has invited you to collaborate on the case <b>${caseTitle}</b>
-<br>as the <b>${inviteeRole}</b> for that unit.
+<br>Would like to invite you to collaborate on the case called: <b>${caseTitle}</b>
+<br>as the <b>${inviteeRole}</b> link to that policy.
 </p>
 <p>
-<br>Please click on <a href=${url.resolve(process.env.ROOT_URL, `/invitation?code=${accessToken}`)}>this link</a> to get more information about the case and reply to ${invitorUsername || 'him'}.
+<br>Please click on <a href=${url.resolve(process.env.ROOT_URL, `/invitation?code=${accessToken}`)}>this link</a> to get more information and join the discussion with ${invitorUsername || 'him'}.
 <br>If the above link does not work, copy paste this in your browser: ${url.resolve(process.env.ROOT_URL, `/invitation?code=${accessToken}`)}
 </p>
+<br>
+<p>Best regards,</p>
 <p>${footer}</p>
 `,
       attachments: [{

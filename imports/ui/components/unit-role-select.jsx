@@ -48,7 +48,7 @@ class UnitRoleSelect extends Component {
         >
           {this.renderOptions()}
         </SelectField>
-        {selectedRole && selectedRole.canBeOccupant && (
+        {/* {selectedRole && selectedRole.canBeOccupant && (
           <Checkbox
             label={`The ${selectedRole.name} is also the occupant of this unit`}
             labelStyle={controlLabelStyle}
@@ -56,7 +56,7 @@ class UnitRoleSelect extends Component {
             onCheck={(evt, isChecked) => onOccupantToggled(isChecked)}
             disabled={disabled}
           />
-        )}
+        )} */}
       </div>
     )
   }

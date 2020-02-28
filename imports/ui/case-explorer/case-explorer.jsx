@@ -321,7 +321,7 @@ class CaseExplorer extends Component {
           }
         />
         <div className="absolute right-1 bottom-2">
-          {caseList.length <= 1 && (
+          {caseList.length === 0 && (
             <FloatingActionButton onClick={this.showSelectionDialog}>
               <FontIcon className="material-icons">add</FontIcon>
             </FloatingActionButton>

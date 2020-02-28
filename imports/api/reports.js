@@ -374,7 +374,7 @@ Meteor.methods({
         return all
       }, {
         component: currUserRole.role,
-        description: `Unee-T Inspection Report for the unit "${selectedUnit}"`,
+        description: `Unee-T-Insurance Inspection Report for the unit "${selectedUnit}"`,
         keywords: [REPORT_KEYWORD],
         status: 'UNCONFIRMED',
         api_key: apiKey,

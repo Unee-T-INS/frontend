@@ -16,7 +16,7 @@ const getBrandConfig = user => {
   }
   return (userCreator && userCreator.customEmailBrandingConfig) || {}
 }
-const verifyReasonExplanation = 'you have signed up to Unee-T with this email address'
+const verifyReasonExplanation = 'you have signed up to Unee-T-Insurance with this email address'
 const unsubText = 'If you think you shouldn\'t be receiving this email, kindly let us know at support@unee-t.com'
 Accounts.emailTemplates.verifyEmail = {
   subject () {
@@ -25,7 +25,7 @@ Accounts.emailTemplates.verifyEmail = {
   text (user, url) {
     return getText({
       mainContentText: `
-Thanks for joining Unee-T!
+Thanks for joining Unee-T-Insurance!
 To verify your account's email address, simply follow the link below.
 ${url}
 `,
@@ -38,7 +38,7 @@ ${url}
   html (user, url) {
     return getHtml({
       mainContentHtml: `
-        <p>Thanks for joining Unee-T!</p>
+        <p>Thanks for joining Unee-T-Insurance!</p>
         <p>To verify your account email, simply click the link below.</p>
         <p><a href=${url}>${url}</a></p>
       `,
@@ -57,7 +57,7 @@ const resetReasonExplanation = 'you have requested to reset your account\'s pass
 
 Accounts.emailTemplates.resetPassword = {
   subject () {
-    return 'Reset the password for your Unee-T account'
+    return 'Reset the password for your Unee-T-Insurance account'
   },
   text (user, url) {
     return getText({
