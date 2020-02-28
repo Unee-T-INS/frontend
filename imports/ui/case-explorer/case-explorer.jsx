@@ -285,12 +285,12 @@ class CaseExplorer extends Component {
     return (
       <div className="flex flex-column roboto overflow-hidden flex-grow h-100 relative">
         <UnverifiedWarning />
-        {/* <div className="flex bg-very-light-gray">
-          <RoleFilter
+        <div className="flex bg-very-light-gray">
+          {/* <RoleFilter
             selectedRoleFilter={selectedRoleFilter}
             onRoleFilterClicked={this.handleRoleFilterClicked}
             roles={["All", "Assigned to me"]}
-          />
+          /> */}
           <Sorter
             onSortClicked={this.handleSortClicked}
             sortBy={sortBy}
@@ -305,7 +305,7 @@ class CaseExplorer extends Component {
               ]
             ])}
           />
-        </div> */}
+        </div>
         <UnitGroupList
           unitGroupList={caseGrouping}
           creationUrlGenerator={this.createCaseUrlGen}

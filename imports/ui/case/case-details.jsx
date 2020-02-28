@@ -652,7 +652,7 @@ class CaseDetails extends Component {
           <div className='flex-grow'>
             {infoItemLabel('Documents')}
           </div>
-          {floorPlan && (
+          {/* {floorPlan && (
             <a className='mt1 link f7 bondi-blue underline' onClick={() => {
               const { savedFloorPlanPins, floorPlanPins } = this.state
               if (isEditingPins && !isEqual(savedFloorPlanPins, floorPlanPins)) {
@@ -664,7 +664,7 @@ class CaseDetails extends Component {
                 ? 'Save pins'
                 : pins.length ? 'Edit pins' : 'Add pins'}
             </a>
-          )}
+          )} */}
         </div>
         <div className='mt1'>
           <FloorPlanUploader unitMetaData={unitItem.metaData()}>

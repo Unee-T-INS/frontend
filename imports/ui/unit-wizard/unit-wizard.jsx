@@ -115,7 +115,7 @@ class UnitWizard extends Component {
                 disabled={inProgress}
                 onChange={this.createTextStateHandler('name')}
               />
-              <p className='f7 gray ma0 mt1'>This will be displayed to everyone involved in the unit.</p>
+              <p className='f7 gray ma0 mt1'>This will be displayed to everyone involved in the policy.</p>
               <SelectField
                 value={type}
                 floatingLabelText='Policy Type'
