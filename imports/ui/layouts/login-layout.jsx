@@ -6,7 +6,7 @@ const LoginLayout = ({ subHeading, footerContent, children }) => (
   <div className="w-100 bg-bondi-blue min-h-100vh pt5 roboto">
     <main className="measure-narrow center tc">
       <div className="bg-white br3 pv4 ph3">
-        <div className="flex items-center justify-center pb1">
+        <div className="flex-column items-center justify-center pb1">
           {/* <UneeTLogoText sizeMultiplier={1.7} textColor="var(--bondi-blue)" /> */}
           {/* <UneeTIcon
             className="ml2"
@@ -18,8 +18,8 @@ const LoginLayout = ({ subHeading, footerContent, children }) => (
             style={{ width: "8rem", height: "8rem" }}
             alt="logo"
           />
-          <h3 className="f3 fw5 mt3 tc ph0 pt3">Unee-T-Insurance</h3>
-          <h2 className="f5 fw5 tc ph0 pt3">Simplifying insurance processes</h2>
+          <h3 className="f3 fw5 tc">Unee-T-Insurance</h3>
+          <h2 className="f4 fw4 tc">Simplifying insurance processes</h2>
         </div>
         <h3 className="f4 fw3 ph0 mh0 mt3 pt2 tc mid-gray">{subHeading}</h3>
         {children}

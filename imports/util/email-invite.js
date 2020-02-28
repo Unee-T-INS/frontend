@@ -39,7 +39,7 @@ ${url.resolve(process.env.ROOT_URL, `/invitation?code=${accessToken}`)}
 
 ${footer}
 `,
-      html: `<img src="cid:logo@unee-t.com"/>
+      html: `<img src="/logo-stark-group-dark.jpg"/>
 
 <p>Good day,</p>
 <p>
@@ -54,9 +54,8 @@ ${footer}
 <br>Please click on <a href=${url.resolve(process.env.ROOT_URL, `/invitation?code=${accessToken}`)}>this link</a> to get more information and join the discussion with ${invitorUsername || 'him'}.
 <br>If the above link does not work, copy paste this in your browser: ${url.resolve(process.env.ROOT_URL, `/invitation?code=${accessToken}`)}
 </p>
-<br>
-<p>Best regards,</p>
 <p>${footer}</p>
+<p>Best regards,</p>
 `,
       attachments: [{
         path: 'https://s3-ap-southeast-1.amazonaws.com/prod-media-unee-t/2018-06-14/unee-t_logo_email.png',

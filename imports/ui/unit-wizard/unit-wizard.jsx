@@ -179,7 +179,7 @@ class UnitWizard extends Component {
                 value={city}
                 disabled={inProgress}
                 onChange={this.createTextStateHandler('city')}
-              />F
+              />
                <InputRow
                 label='Insurer'
                 value={country}
@@ -205,7 +205,7 @@ class UnitWizard extends Component {
                 disabled={inProgress}
                 onChange={this.createTextStateHandler('state')}
               />
-              <p className='f7 gray ma0 mt1'>State, province, prefecture, etc.</p>
+              {/* <p className='f7 gray ma0 mt1'>State, province, prefecture, etc.</p> */}
               {/* <InputRow
                 label='ZIP / Postal Code'
                 value={zipCode}
