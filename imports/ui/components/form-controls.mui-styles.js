@@ -6,7 +6,7 @@ export const textInputFloatingLabelStyle = Object.assign({}, controlLabelStyle, 
   fontSize: '1.167rem'
 })
 export const textInputStyle = {
-  color: 'var(--mid-gray)'
+  color: 'var(--mid-gray)',  
 }
 export const textInputUnderlineFocusStyle = {
   borderColor: 'var(--bondi-blue)'

@@ -39,12 +39,11 @@ ${url.resolve(process.env.ROOT_URL, `/invitation?code=${accessToken}`)}
 
 ${footer}
 `,
-      html: `<img src="/logo-stark-group-dark.jpg"/>
+           html: `<img src="cid:logo@unee-t.com"/>
 
 <p>Good day,</p>
 <p>
-<br>${invitorUsername || invitorEmailAddress},
-<br>the ${roleStr} for the policy
+<br>${invitorUsername || invitorEmailAddress}, the ${roleStr} for the policy:
 <br><b>${unitName}</b>
 <br>${unitDesc}
 <br>Would like to invite you to collaborate on the case called: <b>${caseTitle}</b>
@@ -58,7 +57,7 @@ ${footer}
 <p>Best regards,</p>
 `,
       attachments: [{
-        path: 'https://s3-ap-southeast-1.amazonaws.com/prod-media-unee-t/2018-06-14/unee-t_logo_email.png',
+        path: 'https://case.dev.ins.unee-t.com/logo-stark-group-dark.jpg',
         cid: 'logo@unee-t.com'
       }]
     })
