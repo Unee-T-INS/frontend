@@ -295,6 +295,7 @@ class Unit extends Component {
                   className="no-shrink"
                   onChange={this.handleChange}
                   value={viewIdx}
+                  initialSelectedIndex={0}
                   inkBarStyle={{ backgroundColor: "white" }}
                 >
                   <Tab label="POLICY DETAILS" value={2} />

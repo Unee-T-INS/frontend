@@ -23,7 +23,7 @@ export default (assignee, notificationId, settingType, unitMeta, unitCreator, ca
       typeTitle: 'Case Assigned',
       user: assignee,
       mainContentHtml: `
-        <p>You have been assigned to <strong>${caseTitle}</strong> in ${unitMeta.displayName} at ${unitMeta.streetAddress}.</p>
+        <p>You have been assigned to <strong>${caseTitle}</strong> in ${unitMeta.displayName}.</p>
       `,
       mainContentText: `
         You have been assigned to "${caseTitle}" in ${unitMeta.displayName} at ${unitMeta.streetAddress}.
