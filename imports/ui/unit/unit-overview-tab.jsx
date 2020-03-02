@@ -204,9 +204,9 @@ class UnitOverviewTab extends React.Component<Props, State> {
                 isEditing
               })}
             </div>
-            <div className='mt2'>
+            {/* <div className='mt2'>
               {infoItemMembers('Property Group', unitItem.classification)}
-            </div>
+            </div> */}
             <div>
               {isEditing ? (
                 <SelectField

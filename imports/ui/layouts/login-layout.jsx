@@ -14,7 +14,7 @@ const LoginLayout = ({ subHeading, footerContent, children }) => (
           /> */}
 
           <img
-            src="/ic.jpg"
+            src="/ic.png"
             style={{ width: "8rem", height: "8rem" }}
             alt="logo"
           />
