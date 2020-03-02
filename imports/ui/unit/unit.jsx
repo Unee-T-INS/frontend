@@ -298,8 +298,8 @@ class Unit extends Component {
                   initialSelectedIndex={0}
                   inkBarStyle={{ backgroundColor: "white" }}
                 >
-                  <Tab label="POLICY DETAILS" value={2} />
-                  <Tab label={`CASES (${sortedCases.length})`} value={0} />
+                  <Tab label="POLICY DETAILS" value={0} />
+                  <Tab label={`CASES (${sortedCases.length})`} value={1} />
                   {/* <Tab label={`REPORTS (${reportList.length})`} value={1} /> */}
                 </Tabs>
                 
