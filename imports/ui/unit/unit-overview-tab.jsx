@@ -244,7 +244,7 @@ class UnitOverviewTab extends React.Component<Props, State> {
         <div className="bg-white card-shadow-1 pa3">
           <div>
             {this.renderEditableField({
-              label: "Property Name",
+              label: "Policy Number",
               stateVar: "unitName",
               isEditing
             })}
@@ -256,7 +256,7 @@ class UnitOverviewTab extends React.Component<Props, State> {
             {isEditing ? (
               <SelectField
                 value={unitType}
-                floatingLabelText="Property Type"
+                floatingLabelText="Policy Type"
                 floatingLabelStyle={textInputFloatingLabelStyle}
                 underlineFocusStyle={textInputUnderlineFocusStyle}
                 fullWidth
@@ -282,7 +282,7 @@ class UnitOverviewTab extends React.Component<Props, State> {
           </div>
           <div>
             {this.renderEditableField({
-              label: "Additional Description",
+              label: "Name of Product",
               stateVar: "moreInfo",
               isEditing
             })}
@@ -325,22 +325,22 @@ class UnitOverviewTab extends React.Component<Props, State> {
               </div>
             )}
           </div>
-          {/* <div className='flex mt2'>
+          <div className='flex mt2'>
               <div className='flex-grow'>
                 {this.renderEditableField({
-                  label: 'State',
+                  label: 'Additional Comment(s)',
                   stateVar: 'state',
                   isEditing
                 })}
               </div>
-              <div className='flex-grow'>
+              {/* <div className='flex-grow'>
                 {this.renderEditableField({
                   label: 'Zip / Postal code',
                   stateVar: 'zipCode',
                   isEditing
                 })}
-              </div>
-            </div> */}
+              </div> */}
+            </div>
         </div>
         <div className="mt2 bg-white card-shadow-1 pa3">
           <div className="fw5 silver lh-title">PEOPLE</div>
