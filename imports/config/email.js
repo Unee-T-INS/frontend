@@ -3,7 +3,7 @@ import { Accounts } from 'meteor/accounts-base'
 import { getHtml, getText } from '../email-templates/components/generic-email-layout.js'
 import { logger } from '../util/logger'
 
-Accounts.emailTemplates.from = process.env.FROM_EMAIL || 'support@unee-t.com'
+Accounts.emailTemplates.from = process.env.FROM_EMAIL || 'query@stark-grp.com'
 Accounts.config({
   sendVerificationEmail: true
 })
@@ -17,7 +17,7 @@ const getBrandConfig = user => {
   return (userCreator && userCreator.customEmailBrandingConfig) || {}
 }
 const verifyReasonExplanation = 'you have signed up to Unee-T-Insurance with this email address'
-const unsubText = 'If you think you shouldn\'t be receiving this email, kindly let us know at support@unee-t.com'
+const unsubText = 'If you think you shouldn\'t be receiving this email, kindly let us know at query@stark-grp.com'
 Accounts.emailTemplates.verifyEmail = {
   subject () {
     return 'Verify Your Email'
@@ -25,7 +25,7 @@ Accounts.emailTemplates.verifyEmail = {
   text (user, url) {
     return getText({
       mainContentText: `
-Thanks for joining Unee-T-Insurance!
+Thanks for joining Insure Chat!
 To verify your account's email address, simply follow the link below.
 ${url}
 `,
@@ -38,7 +38,7 @@ ${url}
   html (user, url) {
     return getHtml({
       mainContentHtml: `
-        <p>Thanks for joining Unee-T-Insurance!</p>
+        <p>Thanks for joining Insure Chat!</p>
         <p>To verify your account email, simply click the link below.</p>
         <p><a href=${url}>${url}</a></p>
       `,

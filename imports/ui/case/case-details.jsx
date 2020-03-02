@@ -490,7 +490,7 @@ class CaseDetails extends Component {
                 }
                 &nbsp;to collaborate on the case&nbsp;
                 <span className='b'>"{caseItem.title}"</span>
-                &nbsp;for the unit&nbsp;
+                &nbsp;for the policy&nbsp;
                 <span className='b'>{unitItem.name}</span>
               </p>
               <RaisedButton className='mt4' label='Invite another person' labelColor='white' backgroundColor='var(--bondi-blue)'

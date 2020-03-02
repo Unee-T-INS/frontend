@@ -97,7 +97,7 @@ user: ${user.emails[0].address}`
         {this.routeDrawerItem('/case', {
           href: '/case',
           iconName: 'card_travel',
-          text: 'Case Management'
+          text: 'Open Case'
         })}
         <Divider />
         {/* {this.linkDrawerItem({

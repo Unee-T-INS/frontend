@@ -16,7 +16,7 @@ export default (
     html: `<img src="cid:logo@unee-t.com"/>
 <p>Hi ${inviteeName},</p>
 <p>
-  You've been invited by <strong>${invitorName}</strong> (the <strong>${invitorRoleType}</strong>) to Unee-T-Insurance to collaborate on the property: <br />
+  You've been invited by <strong>${invitorName}</strong> (the <strong>${invitorRoleType}</strong>) to Insure Chat to collaborate on the property: <br />
   <strong>${unitTitle}:</strong><br/>
   ${unitDescription}
 </p>
@@ -25,13 +25,13 @@ export default (
   This invitation allows you to create cases for any issue in this property.<br />
   You can also create inspection reports.
 </p>
-<br />Please click on <a href='${accessLink}'>this link</a> to access the property in Unee-T-Insurance.
+<br />Please click on <a href='${accessLink}'>this link</a> to access the property in Insure Chat.
 <br /><br /><small>If the above link does not work, copy & paste this in your browser: ${accessLink}</small>
 
 `,
     text: `Hi ${inviteeName},
 
-You've been invited by ${invitorName} (the ${invitorRoleType}) to Unee-T-Insurance to collaborate on the property:
+You've been invited by ${invitorName} (the ${invitorRoleType}) to Insure Chat to collaborate on the property:
 
 ${unitTitle}:
 
@@ -47,7 +47,7 @@ Please follow ${accessLink} to participate.
 
 `,
     attachments: [{
-      path: 'https://s3-ap-southeast-1.amazonaws.com/prod-media-unee-t/2018-06-14/unee-t_logo_email.png',
+      path: 'https://case.dev.ins.unee-t.com/ic.png',
       cid: 'logo@unee-t.com'
     }]
   }

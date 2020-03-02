@@ -3,7 +3,7 @@ import { resolveUserName } from "./helpers";
 
 // const defaultLogoUrl = 'https://s3-ap-southeast-1.amazonaws.com/prod-media-unee-t/2018-06-14/unee-t_logo_email.png'
 const defaultLogoUrl =
-  "https://case.dev.ins.unee-t.com/logo-stark-group-dark.jpg";
+  "https://case.dev.ins.unee-t.com/ic.png";
 const defBrandConfig = {
   logoUrl: null,
   brandName: null,
@@ -15,7 +15,7 @@ const uneetTagLine = "We facilitate your insurance processes";
 const defaultSignatureHtml = `
     <p>
       Regards,<br />
-      Unee-T-Insurance<br />
+      Insure Chat<br />
       ${uneetTagLine}
     </p>
   `;
@@ -83,7 +83,7 @@ export const getHtml = ({
               <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                 <tr>
                   <td class="content-block powered-by">
-                    <div>Powered by Unee-T-Insurance</div>
+                    <div>Powered by Insure Chat</div>
                     <!-- ${
                       brandConfig.signatureHtml
                         ? `<div>Unee-T: ${uneetTagLine}</div>`

@@ -14,7 +14,7 @@ const LoginLayout = ({ subHeading, footerContent, children }) => (
           /> */}
 
           <img
-            src="/logo-stark-group-dark.jpg"
+            src="/ic.jpg"
             style={{ width: "8rem", height: "8rem" }}
             alt="logo"
           />

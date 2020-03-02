@@ -8,14 +8,14 @@ export default ({ typeTitle, user, mainContentHtml, mainContentText, accessUrl, 
       ${mainContentHtml}
       <p>
         Click on this <a href="${accessUrl}">link</a> to see the current status for this case.<br />
-        Participate in the conversation, add comments or pictures directly so we can resolve this faster.
+        Participate in the conversation, add comments or documents directly so we can manage this case faster.
       </p>
     `,
     mainContentText: `
 ${mainContentText}
 
 Follow this link: "${accessUrl}" to see the current status for this case.
-Participate in the conversation, add comments or pictures directly so we can resolve this faster.
+Participate in the conversation, add comments or documents directly so we can resolve this faster.
     `,
     unsubClauseHtml: `
       <div class="unsub-instruction">

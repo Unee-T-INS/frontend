@@ -149,13 +149,13 @@ class UnitExplorer extends Component {
             <StatusFilter
               selectedStatusFilter={selectedStatusFilter}
               onFilterClicked={this.handleStatusFilterClicked}
-              status={['All', 'Active', 'Disabled']}
+              status={['All', 'In-force', 'Lapse']}
             />
-            <RoleFilter
+            {/* <RoleFilter
               selectedRoleFilter={selectedRoleFilter}
               onRoleFilterClicked={this.handleRoleFilterClicked}
               roles={['All', 'Created', 'Involved']}
-            />
+            /> */}
             <Sorter
               onSortClicked={this.handleSortClicked}
               sortBy={sortBy}

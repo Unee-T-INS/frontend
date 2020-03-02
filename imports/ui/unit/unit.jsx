@@ -68,7 +68,7 @@ function NoItem({ item, iconType }) {
   );
 }
 
-const viewsOrder = ["cases", "reports", "overview"];
+const viewsOrder = [ "overview", "cases", "reports"];
 
 class Unit extends Component {
   saveHandler = null;
@@ -297,9 +297,9 @@ class Unit extends Component {
                   value={viewIdx}
                   inkBarStyle={{ backgroundColor: "white" }}
                 >
-                  <Tab label={`CASES (${sortedCases.length})`} value={0} />
-                  <Tab label={`REPORTS (${reportList.length})`} value={1} />
-                  <Tab label="OVERVIEW" value={2} />
+                  <Tab label="POLICY DETAILS" value={0} />
+                  <Tab label={`CASES (${sortedCases.length})`} value={1} />
+                  {/* <Tab label={`REPORTS (${reportList.length})`} value={1} /> */}
                 </Tabs>
                 <div className="flex-grow flex flex-column overflow-auto">
                   <SwipeableViews

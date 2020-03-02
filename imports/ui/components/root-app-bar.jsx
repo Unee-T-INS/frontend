@@ -89,7 +89,7 @@ export default class RootAppBar extends React.Component<Props> {
             >
               {/* <UneeTIcon /> */}
               <img
-                src="/logo-stark-group-dark.jpg"
+                src="/ic-home.png"
                 style={{ width: "4rem", height: "4rem" }}
                 alt="logo"
               />

@@ -19,7 +19,7 @@ export const renderAppBarLeft = onClick => (
     >
       {/* <UneeTIcon /> */}
       <img
-        src="/logo-stark-group-dark.jpg"
+        src="/ic-home.png"
         style={{ width: "3rem", height: "3rem" }}
         alt="logo"
       />

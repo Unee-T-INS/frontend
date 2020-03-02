@@ -41,23 +41,21 @@ ${footer}
 `,
            html: `<img src="cid:logo@unee-t.com" style={{ width: '150px' }}/>
 
-<p>Good day,</p>
+<p>Dear Sir/Madam,</p>
 <p>
 <br>${invitorUsername || invitorEmailAddress}, the ${roleStr} for the policy:
 <br><b>${unitName}</b>
 <br>${unitDesc}
-<br>Would like to invite you to collaborate on the case called: <b>${caseTitle}</b>
-<br>as the <b>${inviteeRole}</b> link to that policy.
+<br>Would like to invite you to collaborate on the case called: <b>${caseTitle}</b> as the <b>${inviteeRole}</b> link to that policy.
 </p>
 <p>
 <br>Please click on <a href=${url.resolve(process.env.ROOT_URL, `/invitation?code=${accessToken}`)}>this link</a> to get more information and join the discussion with ${invitorUsername || 'him'}.
 <br>If the above link does not work, copy paste this in your browser: ${url.resolve(process.env.ROOT_URL, `/invitation?code=${accessToken}`)}
 </p>
-<p>${footer}</p>
 <p>Best regards,</p>
 `,
       attachments: [{
-        path: 'https://case.dev.ins.unee-t.com/logo-stark-group-dark.jpg',
+        path: 'https://case.dev.ins.unee-t.com/ic.png',
         cid: 'logo@unee-t.com'
       }]
     })

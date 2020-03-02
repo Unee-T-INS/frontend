@@ -441,7 +441,7 @@ class CaseExplorerHeader extends Component {
     } = this.props;
     return (
       <RootAppBar
-        title="Case Management"
+        title="Open Case Management"
         onIconClick={onIconClick}
         searchText={searchText}
         onSearchChanged={text => dispatch(updateSearch(text))}

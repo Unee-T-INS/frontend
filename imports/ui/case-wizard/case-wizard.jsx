@@ -304,7 +304,7 @@ class CaseWizard extends Component {
                 </SelectField>
               </div>
             </div>
-            {/* <div className='mt1'>
+            <div className='mt1'>
               <div className='flex items-center'>
                 <MarkerIcon style={{ width: '12px', height: '17px' }} fillColor='var(--bondi-blue)' />
                 <div className='ml2 f6 b bondi-blue'>Pin on Policy Documents</div>
@@ -327,7 +327,7 @@ class CaseWizard extends Component {
                   </div>
                 </FloorPlanUploader>
               </div>
-            </div> */}
+            </div>
 
             {rolesToRender.length === 1 && rolesToRender[0].areYouDefAssignee ? (
               <p className='f7 gray ma0 mt2'>

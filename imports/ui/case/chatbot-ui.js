@@ -82,7 +82,7 @@ export default class ChatBotUI extends Component {
                   (msg.link ? "br--top bb b--gray-93" : "")
                 }
               >
-                <span className="bondi-blue f6 pb1"> Unee-T </span>
+                <span className="bondi-blue f6 pb1"> Insure Chat </span>
                 <div className="pv1 f5 mr3">{msg.msg}</div>
               </div>
               <div className="mw-60 cf br3 br--bottom pl3 pr2 mh2 dib tl bg-white">

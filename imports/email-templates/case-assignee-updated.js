@@ -23,10 +23,10 @@ export default (assignee, notificationId, settingType, unitMeta, unitCreator, ca
       typeTitle: 'Case Assigned',
       user: assignee,
       mainContentHtml: `
-        <p>You have been assigned the case <strong>${caseTitle}</strong> in ${unitMeta.displayName} at ${unitMeta.streetAddress}.</p>
+        <p>You have been assigned to <strong>${caseTitle}</strong> in ${unitMeta.displayName} at ${unitMeta.streetAddress}.</p>
       `,
       mainContentText: `
-        You have been assigned the case "${caseTitle}" in ${unitMeta.displayName} at ${unitMeta.streetAddress}.
+        You have been assigned to "${caseTitle}" in ${unitMeta.displayName} at ${unitMeta.streetAddress}.
       `,
       reasonExplanation: 'you have been assigned to a case',
       unitCreator,
