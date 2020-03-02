@@ -276,7 +276,7 @@ class UnitOverviewTab extends React.Component<Props, State> {
               </SelectField>
             ) : (
               <div className="mt3">
-                {infoItemMembers("Property Type", metaData.unitType)}
+                {infoItemMembers("Policy Type", metaData.unitType)}
               </div>
             )}
           </div>

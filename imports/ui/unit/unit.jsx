@@ -68,7 +68,7 @@ function NoItem({ item, iconType }) {
   );
 }
 
-const viewsOrder = [ "overview", "cases", "reports"];
+const viewsOrder = [ "overview", "cases"];
 
 class Unit extends Component {
   saveHandler = null;
