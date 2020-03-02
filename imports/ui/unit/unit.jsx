@@ -297,10 +297,11 @@ class Unit extends Component {
                   value={viewIdx}
                   inkBarStyle={{ backgroundColor: "white" }}
                 >
-                  <Tab label="POLICY DETAILS" value={0} />
-                  <Tab label={`CASES (${sortedCases.length})`} value={1} />
+                  <Tab label="POLICY DETAILS" value={2} />
+                  <Tab label={`CASES (${sortedCases.length})`} value={0} />
                   {/* <Tab label={`REPORTS (${reportList.length})`} value={1} /> */}
                 </Tabs>
+                
                 <div className="flex-grow flex flex-column overflow-auto">
                   <SwipeableViews
                     resistance

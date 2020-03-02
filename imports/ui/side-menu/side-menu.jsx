@@ -107,7 +107,7 @@ user: ${user.emails[0].address}`
           isExternal: true
         })} */}
         {this.linkDrawerItem({
-          href: 'http://www.insurance-republic.com/uneet-insurance-faq.html',
+          href: 'https://www.insure-chat.com/faq',
           iconName: 'help',
           text: 'FAQ',
           isExternal: true

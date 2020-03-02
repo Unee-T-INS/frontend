@@ -18,7 +18,7 @@ export default (sender, senderRole, recipient, reportId, pdfUrl, reportTitle, un
       </p>
 ${signaturefromhtml}
       <p>
-         <img src="cid:logo@unee-t.com" /><br />
+         <img src="cid:logo@unee-t.com" style="width: 150px"/><br />
          ${learnmorehtml}
       </p>    
     </div>    
@@ -35,7 +35,7 @@ ${learnmoretext}
 `,
   attachments: [
     {
-      path: 'https://s3-ap-southeast-1.amazonaws.com/prod-media-unee-t/2018-06-14/unee-t_logo_email.png',
+      path: 'https://case.dev.ins.unee-t.com/ic.png',
       cid: 'logo@unee-t.com'
     },
     {
