@@ -87,7 +87,9 @@ export default class RootAppBar extends React.Component<Props> {
               style={logoButtonStyle}
               onClick={onIconClick}
             >
-              {/* <UneeTIcon /> */}
+              <FontIcon className="material-icons" color="white">
+                format_list_bulleted
+              </FontIcon>
               <img
                 src="/ic-home.png"
                 style={{ width: "4rem", height: "4rem" }}

@@ -302,7 +302,7 @@ class Unit extends Component {
                   <Tab label={`CASES (${sortedCases.length})`} value={1} />
                   {/* <Tab label={`REPORTS (${reportList.length})`} value={1} /> */}
                 </Tabs>
-                
+
                 <div className="flex-grow flex flex-column overflow-auto">
                   <SwipeableViews
                     resistance
@@ -322,6 +322,13 @@ class Unit extends Component {
                     index={viewIdx}
                     onChangeIndex={this.handleChange}
                   >
+                    <UnitOverviewTab
+                      isEditing={editingDetails}
+                      registerSaveHandler={handler => {
+                        this.saveHandler = handler;
+                      }}
+                      {...{ unitItem, metaData, unitUsers, isOwner }}
+                    />
                     <div className="flex-grow bg-very-light-gray">
                       {caseList.length ? (
                         <div>
@@ -400,7 +407,7 @@ class Unit extends Component {
                         </div>
                       )}
                     </div>
-                    <div className="flex-grow bg-very-light-gray">
+                    {/* <div className="flex-grow bg-very-light-gray">
                       {reportList.length ? (
                         <div>
                           <div className="flex bg-very-light-gray">
@@ -438,14 +445,7 @@ class Unit extends Component {
                           />
                         )}
                       />
-                    </div>
-                    <UnitOverviewTab
-                      isEditing={editingDetails}
-                      registerSaveHandler={handler => {
-                        this.saveHandler = handler;
-                      }}
-                      {...{ unitItem, metaData, unitUsers, isOwner }}
-                    />
+                    </div> */}
                   </SwipeableViews>
                 </div>
                 {editingDetails && (
