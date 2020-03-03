@@ -77,7 +77,7 @@ class FloorPlanUploader extends React.Component<Props> {
                   <div className='flex items-center justify-center'>
                     <FontIcon className='material-icons' color='var(--bondi-blue)'>delete</FontIcon>
                     <div className='ml1 bondi-blue fw5 f6'>
-                      Remove floor plan
+                      Remove document
                     </div>
                   </div>
                 </RaisedButton>

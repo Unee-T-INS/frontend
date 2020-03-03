@@ -2,27 +2,20 @@ import React from "react";
 import IconButton from "material-ui/IconButton";
 import UserAvatar from "../components/user-avatar";
 import { getColorForUser } from "/imports/util/user.js";
-import { UneeTIcon, UneeTLogoText } from "../components/unee-t-icons";
+// import { UneeTIcon, UneeTLogoText } from "../components/unee-t-icons";
 
-import {
-  logoIconStyle,
-  logoButtonStyle
-} from "../components/app-bar.mui-styles";
+// import {
+//   logoIconStyle,
+//   logoButtonStyle
+// } from "../components/app-bar.mui-styles";
 
 export const renderAppBarLeft = onClick => (
   <div className="flex items-center pl2">
     {/* <UneeTLogoText /> */}
-    <IconButton
-      iconStyle={logoIconStyle}
-      style={logoButtonStyle}
-      onClick={onClick}
-    >
-      {/* <UneeTIcon /> */}
-      <img
-        src="/ic-home.png"
-        style={{ width: "3rem", height: "3rem" }}
-        alt="logo"
-      />
+    <IconButton onClick={onClick}>
+      <FontIcon className="material-icons" color="white">
+        format_list_bulleted
+      </FontIcon>
     </IconButton>
   </div>
 );
