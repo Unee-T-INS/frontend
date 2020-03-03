@@ -118,7 +118,8 @@ class UnitOverviewTab extends React.Component<Props, State> {
     city: "",
     state: "",
     country: "",
-    zipCode: ""
+    zipCode: "",
+    statusOfPolicy: ""
   };
   renderEditableField = ({ label, stateVar, isEditing }) => (
     <EditableItem
@@ -284,6 +285,13 @@ class UnitOverviewTab extends React.Component<Props, State> {
             {this.renderEditableField({
               label: "Name of Product",
               stateVar: "moreInfo",
+              isEditing
+            })}
+          </div>
+          <div>
+            {this.renderEditableField({
+              label: "Status of Policy",
+              stateVar: "statusOfPolicy",
               isEditing
             })}
           </div>

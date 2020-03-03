@@ -309,7 +309,7 @@ class CaseWizard extends Component {
                 <MarkerIcon style={{ width: '12px', height: '17px' }} fillColor='var(--bondi-blue)' />
                 <div className='ml2 f6 b bondi-blue'>Pin on Policy Documents</div>
               </div>
-              <div className='mt3'>
+              {/* <div className='mt3'>
                 <FloorPlanUploader unitMetaData={unitItem}>
                   <div>
                     <div className='w-100 ba b--gray-93'>
@@ -326,7 +326,7 @@ class CaseWizard extends Component {
                     </div>
                   </div>
                 </FloorPlanUploader>
-              </div>
+              </div> */}
             </div>
 
             {rolesToRender.length === 1 && rolesToRender[0].areYouDefAssignee ? (

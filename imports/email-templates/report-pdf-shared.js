@@ -18,7 +18,7 @@ export default (sender, senderRole, recipient, reportId, pdfUrl, reportTitle, un
       </p>
 ${signaturefromhtml}
       <p>
-         <img src="cid:logo@unee-t.com" style="width: 150px"/><br />
+         <img src="cid:logo@unee-t.com" style="width: 100px"/><br />
          ${learnmorehtml}
       </p>    
     </div>    

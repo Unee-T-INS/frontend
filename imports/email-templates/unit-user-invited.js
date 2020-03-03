@@ -13,7 +13,7 @@ export default (
   const invitorName = resolveUserName(invitor)
   return {
     subject: `Invitation from ${invitorName} to collaborate on property "${unitTitle}"`,
-    html: `<img src="cid:logo@unee-t.com" style="width: 150px"/>
+    html: `<img src="cid:logo@unee-t.com" style="width: 100px"/>
 <p>Hi ${inviteeName},</p>
 <p>
   You've been invited by <strong>${invitorName}</strong> (the <strong>${invitorRoleType}</strong>) to Insure Chat to collaborate on the property: <br />
