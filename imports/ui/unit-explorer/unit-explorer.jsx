@@ -149,7 +149,7 @@ class UnitExplorer extends Component {
             <StatusFilter
               selectedStatusFilter={selectedStatusFilter}
               onFilterClicked={this.handleStatusFilterClicked}
-              status={['All', 'In-force', 'Lapse']}
+              status={['All', 'With open case', 'Without open case']}
             />
             {/* <RoleFilter
               selectedRoleFilter={selectedRoleFilter}

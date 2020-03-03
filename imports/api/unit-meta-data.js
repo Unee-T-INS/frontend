@@ -25,6 +25,14 @@ export const unitTypes = Object.freeze([
   }
 ])
 
+export const statusOfPolicies = Object.freeze([
+  {
+    name: 'With open case'
+  },
+  {
+    name: 'Without open case'
+  }
+])
 // TODO: Figure this out later
 // export const formatAddressLabel = metaData => {
 //   let fullLabel = ''

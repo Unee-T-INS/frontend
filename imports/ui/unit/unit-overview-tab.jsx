@@ -22,7 +22,7 @@ import ErrorDialog from "../dialogs/error-dialog";
 import EditableItem from "../components/editable-item";
 import { countryListItems } from "../util/common-renderers";
 import countries from "iso-3166-1-codes";
-import { unitTypes } from "../../api/unit-meta-data";
+import { unitTypes, statusOfPolicies } from "../../api/unit-meta-data";
 import MenuItem from "material-ui/MenuItem";
 import SelectField from "material-ui/SelectField";
 import {
@@ -235,7 +235,8 @@ class UnitOverviewTab extends React.Component<Props, State> {
       countrySearchText,
       country,
       countryValidWarning,
-      unitType
+      unitType,
+      statusOfPolicy
     } = this.state;
     const ongoingRemoval = this.getOngoingRemoval(this.props, this.state);
     const unitName = metaData.displayName || unitItem.name;
@@ -289,11 +290,32 @@ class UnitOverviewTab extends React.Component<Props, State> {
             })}
           </div>
           <div>
-            {this.renderEditableField({
-              label: "Status of Policy",
-              stateVar: "statusOfPolicy",
-              isEditing
-            })}
+            {isEditing ? (
+              <SelectField
+                value={statusOfPolicy}
+                floatingLabelText="Status of Policy"
+                floatingLabelStyle={textInputFloatingLabelStyle}
+                underlineFocusStyle={textInputUnderlineFocusStyle}
+                fullWidth
+                onChange={(evt, idx, val) => {
+                  this.setState({
+                    statusOfPolicy: val
+                  });
+                }}
+              >
+                {statusOfPolicies.map(status => (
+                  <MenuItem
+                    key={status.name}
+                    value={status}
+                    primaryText={status.name}
+                  />
+                ))}
+              </SelectField>
+            ) : (
+              <div className="mt3">
+                {infoItemMembers("Status of Policy", metaData.status)}
+              </div>
+            )}
           </div>
         </div>
         <div className="mt2 bg-white card-shadow-1 pa3">
@@ -333,22 +355,22 @@ class UnitOverviewTab extends React.Component<Props, State> {
               </div>
             )}
           </div>
-          <div className='flex mt2'>
-              <div className='flex-grow'>
-                {this.renderEditableField({
-                  label: 'Additional Comment(s)',
-                  stateVar: 'state',
-                  isEditing
-                })}
-              </div>
-              {/* <div className='flex-grow'>
+          <div className="flex mt2">
+            <div className="flex-grow">
+              {this.renderEditableField({
+                label: "Additional Comment(s)",
+                stateVar: "state",
+                isEditing
+              })}
+            </div>
+            {/* <div className='flex-grow'>
                 {this.renderEditableField({
                   label: 'Zip / Postal code',
                   stateVar: 'zipCode',
                   isEditing
                 })}
               </div> */}
-            </div>
+          </div>
         </div>
         <div className="mt2 bg-white card-shadow-1 pa3">
           <div className="fw5 silver lh-title">PEOPLE</div>
