@@ -1,6 +1,7 @@
 import React from "react";
 import IconButton from "material-ui/IconButton";
 import UserAvatar from "../components/user-avatar";
+import FontIcon from "material-ui/FontIcon";
 import { getColorForUser } from "/imports/util/user.js";
 // import { UneeTIcon, UneeTLogoText } from "../components/unee-t-icons";
 
