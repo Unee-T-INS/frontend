@@ -75,12 +75,15 @@ ${footer}
 </p>
     <p>
       To opt out of receiving "${settingType}" emails, please visit
-      <a href='${
-    createEngagementLink({
-      url: URL.resolve(process.env.ROOT_URL, '/notification-settings'),
-      id: notificationId,
-      email: user.emails[0].address
-    })
+      <a href='${url.resolve(process.env.ROOT_URL, `/notification-settings`)
+// Function `createEngagementLink` is not working - see GH issue #26
+// ---> Commenting out as a quick fix.
+    //   createEngagementLink({
+    //   url: URL.resolve(process.env.ROOT_URL, '/notification-settings'),
+    //   id: notificationId,
+    //   email: user.emails[0].address
+    // })
+// END quickfix
     }'>
         ${URL.resolve(process.env.ROOT_URL, '/notification-settings')}
       </a>
@@ -94,10 +97,15 @@ export function optOutText (settingType, notificationId, user, optoutUrl) {
 ${footer}
 
 To opt out of receiving "${settingType}" emails, please visit
-    ${createEngagementLink({
-      url: URL.resolve(process.env.ROOT_URL, '/notification-settings'),
-      id: notificationId,
-      email: user.emails[0].address
-    })}
+    ${url.resolve(process.env.ROOT_URL, `/notification-settings`)
+// Function `createEngagementLink` is not working - see GH issue #26
+// ---> Commenting out as a quick fix.
+    //   createEngagementLink({
+    //   url: URL.resolve(process.env.ROOT_URL, '/notification-settings'),
+    //   id: notificationId,
+    //   email: user.emails[0].address
+    // })
+// END quickfix
+  }
  `)
 }
