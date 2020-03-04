@@ -5,17 +5,26 @@ import notificationEmailLayout from './components/notification-email-layout'
 export default (assignee, notificationId, settingType, unitMeta, unitCreator, caseTitle, caseId, message, user) => {
   const casePath = getCaseAccessPath(assignee, caseId, unitMeta.bzId)
 
-  const optOutUrl = createEngagementLink({
-    url: url.resolve(process.env.ROOT_URL, '/notification-settings'),
-    id: notificationId,
-    email: assignee.emails[0].address
-  })
+  const optOutUrl = url.resolve(process.env.ROOT_URL, `/notification-settings`)
+// Function `createEngagementLink` is not working - see GH issue #26
+// ---> Commenting out as a quick fix.
+  // createEngagementLink({
+  //   url: url.resolve(process.env.ROOT_URL, '/notification-settings'),
+  //   id: notificationId,
+  //   email: assignee.emails[0].address
+  // })
+// END quickfix
 
-  const accessUrl = createEngagementLink({
-    url: url.resolve(process.env.ROOT_URL, casePath),
-    id: notificationId,
-    email: assignee.emails[0].address
-  })
+  const accessUrl = url.resolve(process.env.ROOT_URL, `casePath`)
+// Function `createEngagementLink` is not working - see GH issue #26
+// ---> Commenting out as a quick fix.
+  // createEngagementLink({
+  //   url: url.resolve(process.env.ROOT_URL, casePath),
+  //   id: notificationId,
+  //   email: assignee.emails[0].address
+  // })
+// END quickfix
+
   return {
     subject: `Case updated ${caseTitle} in ${unitMeta.displayName} at ${unitMeta.streetAddress}`,
     ...notificationEmailLayout({

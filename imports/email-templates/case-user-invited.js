@@ -5,17 +5,25 @@ import notificationEmailLayout from './components/notification-email-layout'
 export default (invitee, notificationId, settingType, unitMeta, unitCreator, caseTitle, caseId) => {
   const casePath = getCaseAccessPath(invitee, caseId, unitMeta.bzId)
 
-  const optOutUrl = createEngagementLink({
-    url: url.resolve(process.env.ROOT_URL, '/notification-settings'),
-    id: notificationId,
-    email: invitee.emails[0].address
-  })
+  const optOutUrl = url.resolve(process.env.ROOT_URL, `/notification-settings`)
+// Function `createEngagementLink` is not working - see GH issue #26
+// ---> Commenting out as a quick fix.
+  // createEngagementLink({
+  //   url: url.resolve(process.env.ROOT_URL, '/notification-settings'),
+  //   id: notificationId,
+  //   email: invitee.emails[0].address
+  // })
+// END quickfix
 
-  const accessUrl = createEngagementLink({
-    url: url.resolve(process.env.ROOT_URL, casePath),
-    id: notificationId,
-    email: invitee.emails[0].address
-  })
+  const accessUrl =  url.resolve(process.env.ROOT_URL, `casePath`)
+// Function `createEngagementLink` is not working - see GH issue #26
+// ---> Commenting out as a quick fix.
+  // createEngagementLink({
+  //   url: url.resolve(process.env.ROOT_URL, casePath),
+  //   id: notificationId,
+  //   email: invitee.emails[0].address
+  // })
+// END quickfix
 
   return {
     subject: `Collaborate on "${caseTitle}"`,
