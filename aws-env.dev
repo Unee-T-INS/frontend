@@ -35,7 +35,7 @@
 
 # Variables that are built from other variables:
 
-	export ROOT_URL=https://case.$STAGE.$DOMAIN
+	export ROOT_URL=https://case.dev.ins.unee-t.com
 	export BUGZILLA_URL=https://dashboard.$STAGE.$DOMAIN
 
 	export CLOUDINARY_API_ENDPOINT=https://api.cloudinary.com/v1_1/$CLOUDINARY_CLOUD_NAME/auto/upload
