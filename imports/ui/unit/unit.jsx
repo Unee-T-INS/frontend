@@ -250,11 +250,11 @@ class Unit extends Component {
         href: `/case/new?unit=${unitId}`,
         icon: "add"
       },
-      // {
-      //   color: "var(--bondi-blue)",
-      //   href: `${rootMatch.url}/${viewsOrder[1]}/new`,
-      //   icon: "add"
-      // },
+      {
+        color: "var(--bondi-blue)",
+        href: `${rootMatch.url}/${viewsOrder[2]}/new`,
+        icon: "add"
+      },
       {
         color: "var(--bondi-blue)",
         condition: () => isOwner && !editingDetails,
