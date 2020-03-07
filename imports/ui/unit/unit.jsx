@@ -392,9 +392,7 @@ class Unit extends Component {
                                     backgroundColor={desc.color}
                                     className="zoom-effect"
                                     onClick={() =>
-                                      desc.action
-                                        ? desc.action()
-                                        : dispatch(push(desc.href))
+                                      dispatch(push(`/case/new?unit=${unitId}`))
                                     }
                                   >
                                     <FontIcon className="material-icons">
