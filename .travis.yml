@@ -53,17 +53,14 @@ before_install:
 #     - node_modules
 
 install:
-  # - meteor npm install
-  # Adding script build docker image
-  #- docker build -t $DOCKER_CI_REPO_NAME . 
+  # build the docker image that will deploy the code
+  - docker build -t $DOCKER_CI_REPO_NAME . 
 
 # script:
 #   - npm t
 
-# #Adding script deploy docker image to docker repository
-
-after_success:
-# Update the docker image
+# after_success:
+# Update the docker image in the Dockerhub repository
 #  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
 #  - docker build -t $DOCKER_CI_REPO_NAME:latest .
 #  - docker tag $DOCKER_CI_REPO_NAME:latest $DOCKER_CI_REPO_NAME:$IMAGE_TAG
@@ -85,16 +82,8 @@ matrix:
           # - AWS_ACCOUNT_SECRET_DEV
           # - AWS_DEFAULT_REGION
         script: TRAVIS_DOCKER_REPO_NAME=$DOCKER_CI_REPO_NAME TRAVIS_PROFILE=$AWS_PROFILE_DEV TRAVIS_AWS_ACCESS_KEY_ID=$AWS_ACCOUNT_USER_ID_DEV TRAVIS_AWS_SECRET_ACCESS_KEY=$AWS_ACCOUNT_SECRET_DEV TRAVIS_AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION ./deploy.sh -d
-        on:
-          branch: master
-    - env: DEPLOY=demo
-      if: tag IS present
-      deploy:
-        provider: script
-        script: PROFILE=$AWS_PROFILE_DEMO AWS_ACCESS_KEY_ID=$AWS_ACCOUNT_USER_ID_DEMO AWS_SECRET_ACCESS_KEY=$AWS_ACCOUNT_SECRET_DEMO AWS_REGION=$AWS_DEFAULT_REGION ./deploy.sh -s
-        on:
-          branch: master
-          tags: true
+      on:
+        branch: master
     - env: DEPLOY=prod
       if: tag IS present
       deploy:
@@ -102,6 +91,6 @@ matrix:
         script: PROFILE=$AWS_PROFILE_PROD AWS_ACCESS_KEY_ID=$AWS_ACCOUNT_USER_ID_PROD AWS_SECRET_ACCESS_KEY=$AWS_ACCOUNT_SECRET_PROD AWS_REGION=$AWS_DEFAULT_REGION ./deploy.sh -p 
         # comment out the cache invalidation since this has NOT been tested
         #&& AWS_ACCESS_KEY_ID=$AWS_ACCOUNT_USER_ID_PROD AWS_SECRET_ACCESS_KEY=$AWS_ACCOUNT_SECRET_PROD aws cloudfront create-invalidation --distribution-id E173XT6X8V4A18 --paths '/*'
-        on:
-          branch: master
-          tags: true
+      on:
+        branch: master
+        tags: true
