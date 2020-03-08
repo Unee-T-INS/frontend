@@ -29,7 +29,11 @@
 	
 	export API_ACCESS_TOKEN=$(getparam API_ACCESS_TOKEN)
 	
-	export FROM_EMAIL=$(getparam FROM_EMAIL)
+	export EMAIL_FOR_NOTIFICATION_BZFE=$(getparam EMAIL_FOR_NOTIFICATION_BZFE)
+	# Temporary fix until we update the code to use the variable 
+	# EMAIL_FOR_NOTIFICATION_BZFE instead of FROM_EMAIL
+	export FROM_EMAIL=$EMAIL_FOR_NOTIFICATION_BZFE
+	# END Temporary fix.
 	export SES_SMTP_USERNAME=$(getparam SES_SMTP_USERNAME)
 	export SES_SMTP_PASSWORD=$(getparam SES_SMTP_PASSWORD)
 
