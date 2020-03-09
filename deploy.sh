@@ -3,6 +3,7 @@ set -e
 
 echo "START $0 $(date)"
 STAGE=dev
+SERVICE=meteor
 
 # Usage info
 show_help() {
@@ -43,7 +44,14 @@ done
 
 shift "$((OPTIND-1))"   # Discard the options and sentinel --
 
+# We get the value for the commit we are deploying
+
 export COMMIT=$(git rev-parse --short HEAD)
+
+# Display information for easier debugging
+
+echo '# The STAGE we are deploying is: ' $STAGE
+echo '# The PROFILE we use is: ' $TRAVIS_PROFILE
 
 if ! aws configure --profile $TRAVIS_PROFILE list
 then
@@ -77,18 +85,33 @@ else
 	ecs-cli -version
 fi
 
+echo '# START ecs-cli configure of the `master` cluster in the region:' $TRAVIS_AWS_DEFAULT_REGION
+
 ecs-cli configure --cluster master --region $TRAVIS_AWS_DEFAULT_REGION
+
+echo '# END ecs-cli configure of the `master` cluster'
+
 test -f aws-env.$STAGE && source aws-env.$STAGE
 
-service=$(grep -A1 services AWS-docker-compose.yml | tail -n1 | tr -cd '[[:alnum:]]')
-echo Deploying $service with commit $COMMIT >&2
-
 # Ensure docker compose file's STAGE env is empty for production
+
 test "$STAGE" == prod && export STAGE=""
 
-envsubst < AWS-docker-compose.yml > docker-compose-${service}.yml
+# We prepare a file `docker-compose-${SERVICE}.yml` based on the variables in the file `AWS-docker-compose.yml`
 
-ecs-cli compose --aws-profile $TRAVIS_PROFILE -p ${service} -f docker-compose-${service}.yml service up \
+echo '# START prepare the file docker-compose-'${SERVICE}'.yml'
+
+envsubst < AWS-docker-compose.yml > docker-compose-${SERVICE}.yml
+
+echo '# END prepare the file docker-compose-'${SERVICE}'.yml'
+
+# We do the bulk of the work here
+
+echo '# START Deploying' $SERVICE 'with commit' $COMMIT >&2
+echo '# The PROFILE we use is: ' $TRAVIS_PROFILE
+echo '# target group arn is: '${MEFE_TARGET_ARN}
+
+ecs-cli compose --aws-profile $TRAVIS_PROFILE -p ${SERVICE} -f docker-compose-${SERVICE}.yml service up \
 	--target-group-arn ${MEFE_TARGET_ARN} \
 	--container-name meteor \
 	--container-port 3000 \
@@ -97,6 +120,14 @@ ecs-cli compose --aws-profile $TRAVIS_PROFILE -p ${service} -f docker-compose-${
 	--deployment-min-healthy-percent 50 \
 	--timeout 7
 
-ecs-cli compose --aws-profile $TRAVIS_PROFILE -p ${service} -f docker-compose-${service}.yml service ps
+echo '# END Deploying' $SERVICE 'with commit' $COMMIT >&2
+
+echo '# START ecs-cli configure'
+echo '# The PROFILE we use is: ' $TRAVIS_PROFILE
+echo '# The SERVICE is: ' $SERVICE
+
+ecs-cli compose --aws-profile $TRAVIS_PROFILE -p ${SERVICE} -f docker-compose-${SERVICE}.yml service ps
+
+echo '# END ecs-cli configure'
 
 echo "END $0 $(date)"
