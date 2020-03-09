@@ -125,6 +125,7 @@ echo '# END Deploying' $SERVICE 'with commit' $COMMIT >&2
 echo '# START ecs-cli configure'
 echo '# The PROFILE we use is: ' $TRAVIS_PROFILE
 echo '# The SERVICE is: ' $SERVICE
+echo '# We use the file docker-compose-'${SERVICE}'.yml'
 
 ecs-cli compose --aws-profile $TRAVIS_PROFILE -p ${SERVICE} -f docker-compose-${SERVICE}.yml service ps
 
