@@ -93,9 +93,16 @@ echo '# END ecs-cli configure of the `master` cluster'
 
 test -f aws-env.$STAGE && source aws-env.$STAGE
 
-# Ensure docker compose file's STAGE env is empty for production
 
-test "$STAGE" == prod && export STAGE=""
+# BUG this line breaks the travis deployment in PROD
+#
+# Ensure docker compose file's STAGE env is empty for production
+# test "$STAGE" == prod && export STAGE=""
+#
+# Commenting this out will likely break the `backup.sh` script
+# This script seems to use this to generat MONGO_CONNECT <-- this is WRONG
+#
+# END - BUG 
 
 # We prepare a file `docker-compose-${SERVICE}.yml` based on the variables in the file `AWS-docker-compose.yml`
 
