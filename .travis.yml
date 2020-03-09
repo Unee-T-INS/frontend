@@ -59,6 +59,7 @@ install:
 # script:
 #   - npm t
 
+# Adding script deploy docker image to docker repository
 # after_success:
 # Update the docker image in the Dockerhub repository
 #  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
@@ -81,16 +82,16 @@ matrix:
           # - AWS_ACCOUNT_USER_ID_DEV
           # - AWS_ACCOUNT_SECRET_DEV
           # - AWS_DEFAULT_REGION
-        script: TRAVIS_DOCKER_REPO_NAME=$DOCKER_CI_REPO_NAME TRAVIS_PROFILE=$AWS_PROFILE_DEV TRAVIS_AWS_ACCESS_KEY_ID=$AWS_ACCOUNT_USER_ID_DEV TRAVIS_AWS_SECRET_ACCESS_KEY=$AWS_ACCOUNT_SECRET_DEV TRAVIS_AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION ./deploy.sh -d
-      on:
-        branch: master
+        script: TRAVIS_PROFILE=$AWS_PROFILE_DEV TRAVIS_AWS_ACCESS_KEY_ID=$AWS_ACCOUNT_USER_ID_DEV TRAVIS_AWS_SECRET_ACCESS_KEY=$AWS_ACCOUNT_SECRET_DEV TRAVIS_AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION ./deploy.sh -d && AWS_ACCESS_KEY_ID=$AWS_ACCOUNT_USER_ID_DEV AWS_SECRET_ACCESS_KEY=$AWS_ACCOUNT_SECRET_DEV aws cloudfront create-invalidation --distribution-id E110AWTWK0G3RN --paths '/*'
+        on:
+          branch: master
+    
+    # Add deploy stage for PROD
     - env: DEPLOY=prod
       if: tag IS present
       deploy:
         provider: script
-        script: TRAVIS_DOCKER_REPO_NAME=$DOCKER_CI_REPO_NAME TRAVIS_PROFILE=$AWS_PROFILE_PROD TRAVIS_AWS_ACCESS_KEY_ID=$AWS_ACCOUNT_USER_ID_PROD TRAVIS_AWS_SECRET_ACCESS_KEY=$AWS_ACCOUNT_SECRET_PROD TRAVIS_AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION ./deploy.sh -p 
-        # comment out the cache invalidation since this has NOT been tested
-        #&& AWS_ACCESS_KEY_ID=$AWS_ACCOUNT_USER_ID_PROD AWS_SECRET_ACCESS_KEY=$AWS_ACCOUNT_SECRET_PROD aws cloudfront create-invalidation --distribution-id E173XT6X8V4A18 --paths '/*'
-      on:
-        branch: master
-        tags: true
+        script: TRAVIS_PROFILE=$AWS_PROFILE_PROD TRAVIS_AWS_ACCESS_KEY_ID=$AWS_ACCOUNT_USER_ID_PROD TRAVIS_AWS_SECRET_ACCESS_KEY=$AWS_ACCOUNT_SECRET_PROD TRAVIS_AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION ./deploy.sh -p && AWS_ACCESS_KEY_ID=$AWS_ACCOUNT_USER_ID_PROD AWS_SECRET_ACCESS_KEY=$AWS_ACCOUNT_SECRET_PROD aws cloudfront create-invalidation --distribution-id E3T6U9HGEXURZ9 --paths '/*'
+        on:
+          branch: master
+          tags: true
