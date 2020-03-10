@@ -36,6 +36,7 @@
 	# END Temporary fix.
 	export SES_SMTP_USERNAME=$(getparam SES_SMTP_USERNAME)
 	export SES_SMTP_PASSWORD=$(getparam SES_SMTP_PASSWORD)
+	export MAIL_URL=$(getparam MAIL_URL)
 
 	export MEFE_TARGET_ARN=$(getparam MEFE_TARGET_ARN)
 
@@ -43,8 +44,6 @@
 
 	export ROOT_URL=https://case.$DOMAIN
 	export BUGZILLA_URL=https://dashboard.$DOMAIN
-
-	export MAIL_URL=smtps://$SES_SMTP_USERNAME:$SES_SMTP_PASSWORD@email-smtp.us-west-2.amazonaws.com:465
 
 	export CLOUDINARY_API_ENDPOINT=https://api.cloudinary.com/v1_1/$CLOUDINARY_CLOUD_NAME/auto/upload
 	# Temporary fix until issue https://github.com/Unee-T-INS/frontend/issues/15 is closed
